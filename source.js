@@ -1,5 +1,5 @@
-[
 {
+[{
   "name": "aniru",
   "tag": "anime",
   "host": "ryuk.to",
@@ -343,5 +343,5 @@
     "path": "/",
     "query": {"s": "value"},
   }
+}]
 }
-]
