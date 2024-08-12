@@ -1,17 +1,19 @@
-# AniPlay
+
+<div align="center" width="30">
 
 
 
-<div align="center">
+<img src="https://github.com/user-attachments/assets/821af761-a991-44fb-a12d-d1412ec79d55" alt="Mihon logo" title="AniPlay logo" width="90"/>
 
-![logo](https://github.com/user-attachments/assets/eef26587-1c39-40b7-8ea2-19a5aa79c853
-)
->
+
+
+
 </div>
 
 <div align="center">
 
-## **AniPlay**
+
+# AniPlay
 
 >
 </div>
