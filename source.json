@@ -168,18 +168,20 @@
           },
           "getFilmDate": {
             "querySelector": {
-
               "selector": "div.tac.tick-item.tick-dub",
               "getText": true
             }
-
           },
           "getCurrentSeasonLinkItems": {
             "querySelectorAll": {
               "selector": ".eplister > ul > li > a",
               "attribute": "href"
+            },
+            "goto":{
+              "host":"vidmoly.to",
+              "script":"jwplayer().getPlaylistItem()['file']"
             }
-
+            
           }
         }
       }
