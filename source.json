@@ -53,9 +53,7 @@
             "reverse": true,
             "listenHost":{
              "url":"az1.1stkmgv1.com",
-             "replace":{
-               "embed":"anime"
-             },
+             "contains":"anime",
              "targetExtensionFile":"m3u8"
              
             }
@@ -106,9 +104,7 @@
             "reverse": true,
            "listenHost":{
             "url":"az1.1stkmgv1.com",
-            "replace":{
-              "embed":"anime"
-            },
+            "contains":"anime",
             "targetExtensionFile":"m3u8"
             
            }
