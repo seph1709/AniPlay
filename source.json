@@ -97,7 +97,14 @@
               "attribute": "href"
             },
             "reverse": true,
-            "replaceHost": {"embed": "anime"}
+           "listenHost":{
+            "url":"az1.1stkmgv1.com",
+            "replace":{
+              "embed":"anime"
+            },
+            "targetExtensionFile":"m3u8"
+            
+           }
           }
         }
       }
@@ -112,6 +119,8 @@
       "f[sortby]": "lastest-chap"
     },
     "streamPage": true,
+
+
     "overrideSelectorHomeData": {
       "getTitlePerItem": {
         "querySelector": {"selector": "h2.Title", "getText": true}
@@ -158,15 +167,18 @@
           },
           "getFilmDate": {
             "querySelector": {
+
               "selector": "div.tac.tick-item.tick-dub",
               "getText": true
             }
+
           },
           "getCurrentSeasonLinkItems": {
             "querySelectorAll": {
               "selector": ".eplister > ul > li > a",
               "attribute": "href"
             }
+
           }
         }
       }
