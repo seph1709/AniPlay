@@ -46,6 +46,10 @@
             "querySelectorAll": {
               "selector": ".ssl-item.ep-item ",
               "attribute": "href"
+            },
+              "goto":{
+              "host":"player.ryuk.to",
+              "script":"jwplayer().getPlaylistItem()['file']"
             }
           }
         }
