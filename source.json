@@ -177,6 +177,7 @@
               "selector": ".eplister > ul > li > a",
               "attribute": "href"
             },
+            "reverse": true,
             "goto":{
               "host":"vidmoly.to",
               "script":"jwplayer().getPlaylistItem()['file']"
