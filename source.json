@@ -196,6 +196,12 @@
   },
   "search": {
     "path": "/",
-    "query": {"s": "value"}
+    "query": {"s": "value"},
+    "getDescription": {
+            "querySelector": {
+              "selector": "div[itemprop=description] > p",
+              "getText": true
+            }
+          }
   }
 }]
