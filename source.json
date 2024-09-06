@@ -157,7 +157,8 @@
         "moreDetailsPerItem": {
           "getDescription": {
             "querySelector": {
-              "selector": "div[itemprop=description] > p",
+              "selector": ".desc.mindes"
+,
               "getText": true
             }
           },
