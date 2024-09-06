@@ -138,10 +138,11 @@
   },
   "types": {
     "latest": {
-      "subdirectory": "/anime/?status=&type=&order=update",
+      "subdirectory": "/",
       "logic": {
         "selectAllItems": {
-          "querySelectorAll": {"selector": "article.bs"}
+          "querySelectorAll": {"selector": ".bs[itemscope]"
+}
    
         },
         "getPosterImageUrlPerItem": {
