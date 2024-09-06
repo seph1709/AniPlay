@@ -197,11 +197,14 @@
   "search": {
     "path": "/",
     "query": {"s": "value"},
-    "getDescription": {
+    "overrideSelectorHomeData": {
+      "getDescription": {
             "querySelector": {
               "selector": "div[itemprop=description] > p",
               "getText": true
             }
           }
+    }
+
   }
 }]
