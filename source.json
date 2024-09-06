@@ -128,17 +128,21 @@
       }
     }
   }
+
 },
 {
   "name": "animensub",
   "tag": "anime",
   "host": "animenosub.to",
   "streamPage": {
-    "querySelector": {"selector": "div.film-buttons > a", "attribute": "href"}
+    "querySelector": {"selector": ".nvs.nvsc > a", "attribute": "href"}
   },
   "types": {
     "latest": {
       "subdirectory": "/",
+       "streamPage": {
+    "querySelector": {"selector": ".nvs.nvsc > a", "attribute": "href"}
+  },
       "logic": {
         "selectAllItems": {
           "querySelectorAll": {"selector": ".bs[itemscope]"
