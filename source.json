@@ -1,0 +1,131 @@
+[
+{
+  "name": "animeY",
+  "tag": "anime",
+  "host": "animez.org",
+  "streamPage": {
+    "querySelector": {"selector": "a.watch_button_more", "attribute": "href"}
+  },
+  "types": {
+    "latest": {
+      "subdirectory": "/",
+      "logic": {
+        "selectAllItems": {
+          "querySelectorAll": {"selector": "li.TPostMv"}
+  
+        },
+        "getPosterImageUrlPerItem": {
+          "querySelector": {"selector": "img", "attribute": "src"}
+        },
+        "getTitlePerItem": {
+          "querySelector": {
+            "selector": "img",
+            "attribute": "title"
+          }
+        },
+        "getMoreDetailsUrlPerItem": {
+          "querySelector": {"selector": "a", "attribute": "href"}
+        },
+        "moreDetailsPerItem": {
+          "getDescription": {
+            "querySelector": {
+              "selector": "div#summary_shortened",
+              "getText": true
+            }
+          },
+          "getFilmTag": {
+            "querySelector": {
+              "selector": "li.AAIco-adjust:nth-child(4) > a:nth-child(2)",
+              "getText": true
+            }
+          },
+          "getFilmDate": {
+            "querySelector": {
+              "selector": "li.AAIco-adjust:nth-child(4) > a:nth-child(3))",
+              "getText": true
+            }
+          },
+          "getCurrentSeasonLinkItems": {
+            "querySelectorAll": {
+              "selector": "nav.mb-3 li.wp-manga-chapter > a",
+              "attribute": "href"
+            },
+            "reverse": true,
+            "listenHost":{
+             "url":"az1.1stkmgv1.com",
+             "contains":"anime",
+             "targetExtensionFile":"m3u8"
+             
+            }
+          }
+        }
+      }
+    },
+    "hot": {
+      "subdirectory": "/hot",
+      "logic": {
+        "selectAllItems": {
+          "querySelectorAll": {"selector": "li.TPostMv"}
+        
+        },
+        "getPosterImageUrlPerItem": {
+          "querySelector": {"selector": "img", "attribute": "src"}
+        },
+        "getTitlePerItem": {
+          "querySelector": {"selector": "h2.Title", "getText": true}
+        },
+        "getMoreDetailsUrlPerItem": {
+          "querySelector": {"selector": "a", "attribute": "href"}
+        },
+        "moreDetailsPerItem": {
+          "getDescription": {
+            "querySelector": {
+              "selector": "div#summary_shortened",
+              "getText": true
+            }
+          },
+          "getFilmTag": {
+            "querySelector": {
+              "selector": "div.mrt5.mrb10 > span",
+              "getText": true
+            }
+          },
+          "getFilmDate": {
+            "querySelector": {
+              "selector": "li:nth-child(4) > a:nth-child(3)",
+              "getText": true
+            }
+          },
+          "getCurrentSeasonLinkItems": {
+            "querySelectorAll": {
+              "selector": "nav.mb-3 li.wp-manga-chapter > a",
+              "attribute": "href"
+            },
+            "reverse": true,
+           "listenHost":{
+            "url":"az1.1stkmgv1.com",
+            "contains":"anime",
+            "targetExtensionFile":"m3u8"
+            
+           }
+          }
+        }
+      }
+    }
+  },
+  "search": {
+    "path": "/",
+    "query": {
+      "f[keyword]": "value",
+      "act": "search",
+      "f[status]": "all",
+      "f[sortby]": "lastest-chap"
+    },
+    "streamPage": true,
+    "overrideSelectorHomeData": {
+      "getTitlePerItem": {
+        "querySelector": {"selector": "h2.Title", "getText": true}
+      }
+    }
+  }
+}]
