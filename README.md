@@ -63,10 +63,6 @@ Build for android:
 ```bash
 flutter build apk
 ```
-Or you can run the app:
-```bash
-flutter run
-```
 
 ## Contribution
 
