@@ -302,10 +302,74 @@
       "overrideSelectorHomeData": {
         "getCurrentSeasonLinkItems": {
           "querySelectorAll": {
+
             "selector": ".ssl-item.ep-item ",
             "attribute": "href"
           }
         }
       }
     }
-  }]
+  },
+{
+  "name": "animensub",
+  "tag": "anime",
+  "host": "animenosub.to",
+  "streamPage": {
+    "querySelector": {"selector": "div.film-buttons > a", "attribute": "href"}
+  },
+  "types": {
+    "latest": {
+      "subdirectory": "/anime/?status=&type=&order=update",
+      "logic": {
+        "selectAllItems": {
+          "querySelectorAll": {"selector": "article.bs"}
+   
+        },
+        "getPosterImageUrlPerItem": {
+          "querySelector": {"selector": "img", "attribute": "src"}
+        },
+        "getTitlePerItem": {
+          "querySelector": {"selector": "h2", "getText": true}
+        },
+        "getMoreDetailsUrlPerItem": {
+          "querySelector": {"selector": "a", "attribute": "href"}
+        },
+        "moreDetailsPerItem": {
+          "getDescription": {
+            "querySelector": {
+              "selector": "div[itemprop=description] > p",
+              "getText": true
+            }
+          },
+          "getFilmTag": {
+            "querySelector": {
+              "selector": "div.tac.tick-item.tick-quality",
+              "getText": true
+            }
+          },
+          "getFilmDate": {
+            "querySelector": {
+              "selector": "div.tac.tick-item.tick-dub",
+              "getText": true
+            }
+          },
+          "getCurrentSeasonLinkItems": {
+            "querySelectorAll": {
+              "selector": ".eplister > ul > li > a",
+              "attribute": "href"
+            },
+            "goto":{
+              "host":"vidmoly.to",
+              "script":"jwplayer().getPlaylistItem()['file']"
+            }
+            
+          }
+        }
+      }
+    }
+  },
+  "search": {
+    "path": "/",
+    "query": {"s": "value"}
+  }
+}]
