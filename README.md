@@ -38,10 +38,11 @@
   
 ## Screenshots
 
-[<img src="https://github.com/user-attachments/assets/5fb66c5a-7fa5-4992-b3dc-2163089728bc" width=160>](https://github.com/user-attachments/assets/5fb66c5a-7fa5-4992-b3dc-2163089728bc)
-[<img src="https://github.com/user-attachments/assets/2cdce662-20cd-4346-a779-759a7ba9bad1" width=160>](https://github.com/user-attachments/assets/2cdce662-20cd-4346-a779-759a7ba9bad1)
-[<img src="https://github.com/user-attachments/assets/7fdd0540-ade9-413f-b403-6f863448ae79" width=160>](https://github.com/user-attachments/assets/7fdd0540-ade9-413f-b403-6f863448ae79)
-[<img src="https://github.com/user-attachments/assets/10f7cc64-a320-48a2-890b-3446f8ecc95c" width=160>](https://github.com/user-attachments/assets/10f7cc64-a320-48a2-890b-3446f8ecc95c)
+[<img src="https://github.com/user-attachments/assets/5fb66c5a-7fa5-4992-b3dc-2163089728bc" width=180>](https://github.com/user-attachments/assets/5fb66c5a-7fa5-4992-b3dc-2163089728bc)
+[<img src="https://github.com/user-attachments/assets/2cdce662-20cd-4346-a779-759a7ba9bad1" width=180>](
+https://github.com/user-attachments/assets/2cdce662-20cd-4346-a779-759a7ba9bad1)
+[<img src="https://github.com/user-attachments/assets/7fdd0540-ade9-413f-b403-6f863448ae79" width=180>](https://github.com/user-attachments/assets/7fdd0540-ade9-413f-b403-6f863448ae79)
+[<img src="https://github.com/user-attachments/assets/10f7cc64-a320-48a2-890b-3446f8ecc95c" width=180>](https://github.com/user-attachments/assets/10f7cc64-a320-48a2-890b-3446f8ecc95c)
 
 ## Features
 - Support dark mode and light mode
