@@ -16,6 +16,8 @@ void main() async {
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
   ]);
+
+  await ScreenUtil.ensureScreenSize();
   final Directory appDocDir = await getApplicationDocumentsDirectory();
   Hive.init(appDocDir.path);
   await Hive.openBox("theme");
