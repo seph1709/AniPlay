@@ -54,7 +54,7 @@ https://github.com/user-attachments/assets/2cdce662-20cd-4346-a779-759a7ba9bad1)
 ## Features
 - Support dark mode and light mode
 - Search anime
-- Support types Latest, Completed, Popuar
+- Support types Latest, Completed, Popular
 - Add to favorites
 - Support change to any source
 ## Building for Android
