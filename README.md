@@ -35,7 +35,7 @@
 
 
 
-<p>If you like this app, you can show your appreciation by giving this repo a star. ⭐ It would be much appreciated.</p>
+<p>If you like this app you can show your appreciation by giving this repo a star. ⭐ It would be much appreciated.</p>
 
 
 
