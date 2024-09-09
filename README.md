@@ -68,6 +68,12 @@ Or you can run the app:
 flutter run
 ```
 
+## Contribution
+
+You can contribute in the following ways:
+- make a suggestion
+- bug feedback
+- code contribution
 
 
 
