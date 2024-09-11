@@ -1,3 +1,4 @@
+import 'package:aniplay/controllers/runtime_data_controller.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:aniplay/themes/themes.dart';
@@ -16,8 +17,11 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  late PageController pageController;
   @override
   void initState() {
+    pageController =
+        PageController(initialPage: RuntimeController.currentPage.value - 1);
     super.initState();
   }
 
@@ -33,14 +37,16 @@ class _MyAppState extends State<MyApp> {
                 backgroundColor: t.isDarkMode
                     ? Themes.dark.scaffoldBackgroundColor
                     : Themes.light.scaffoldBackgroundColor,
-                bottomNavigationBar: const NavigationBottom(),
+                bottomNavigationBar: NavigationBottom(
+                  pageController: pageController,
+                ),
                 body: Stack(
                   children: [
                     GetBuilder<CatalogController>(
                         id: "pageView",
                         builder: (_) {
                           return PageView(
-                            controller: c.pageController,
+                            controller: pageController,
                             physics: const NeverScrollableScrollPhysics(),
                             children: const [
                               CatalogView(),

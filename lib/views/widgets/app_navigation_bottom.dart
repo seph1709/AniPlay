@@ -7,7 +7,8 @@ import 'package:aniplay/controllers/catalog_controller.dart';
 import 'package:aniplay/controllers/runtime_data_controller.dart';
 
 class NavigationBottom extends StatelessWidget {
-  const NavigationBottom({super.key});
+  final PageController pageController;
+  const NavigationBottom({super.key, required this.pageController});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +36,7 @@ class NavigationBottom extends StatelessWidget {
                     InkWell(
                       onTapUp: (details) {
                         RuntimeController.currentPage.value = 1;
-                        c.pageController.jumpToPage(0);
+                        pageController.jumpToPage(0);
                         c.update(["navigatorBot", "pageView"]);
                       },
                       child: Container(
@@ -100,7 +101,7 @@ class NavigationBottom extends StatelessWidget {
                     InkWell(
                       onTapUp: (details) {
                         RuntimeController.currentPage.value = 2;
-                        c.pageController.jumpToPage(1);
+                        pageController.jumpToPage(1);
                         c.update(["navigatorBot", "pageView"]);
                       },
                       child: Container(
@@ -162,7 +163,7 @@ class NavigationBottom extends StatelessWidget {
                     InkWell(
                       onTapUp: (details) {
                         RuntimeController.currentPage.value = 3;
-                        c.pageController.jumpToPage(2);
+                        pageController.jumpToPage(2);
                         c.update(["navigatorBot", "pageView"]);
                       },
                       child: Container(

@@ -13,7 +13,6 @@ import 'package:aniplay/controllers/search_controller.dart';
 import 'package:aniplay/controllers/runtime_data_controller.dart';
 
 class CatalogController extends GetxController {
-  late PageController pageController;
   late Source source;
   late Current currentType;
   late SelectAllItems selectAllItems;
@@ -24,8 +23,7 @@ class CatalogController extends GetxController {
 
   @override
   void onInit() async {
-    pageController =
-        PageController(initialPage: RuntimeController.currentPage.value - 1);
+
     scrollController = ScrollController();
 
     box = Hive.box('myBox');
