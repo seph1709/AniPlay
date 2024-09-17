@@ -358,6 +358,7 @@
               "selector": ".eplister > ul > li > a",
               "attribute": "href"
             },
+            "reverse": true,
             "goto":{
               "host":"filemoon.sx",
               "script":"jwplayer().getPlaylistItem()['file']"
