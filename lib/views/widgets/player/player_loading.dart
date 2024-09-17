@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:aniplay/themes/themes.dart';
 import 'package:aniplay/controllers/web_controller.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:aniplay/controllers/runtime_data_controller.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
@@ -17,6 +17,12 @@ class LoadingVideoPlayer extends StatefulWidget {
 }
 
 class _LoadingVideoPlayerState extends State<LoadingVideoPlayer> {
+  @override
+  void initState() {
+    RuntimeController.preventPlayer = false;
+    super.initState();
+  }
+
   @override
   void dispose() async {
     log(Get.previousRoute);
@@ -35,7 +41,7 @@ class _LoadingVideoPlayerState extends State<LoadingVideoPlayer> {
       DeviceOrientation.landscapeRight,
       DeviceOrientation.landscapeLeft,
     ]);
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.leanBack);
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
 
     RuntimeController.progress.value = 0;
     return Scaffold(
@@ -94,9 +100,9 @@ class _LoadingVideoPlayerState extends State<LoadingVideoPlayer> {
                         child: IntrinsicWidth(
                           child: IntrinsicHeight(
                             child: Container(
-                              margin: EdgeInsets.only(bottom: 50.h),
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 8.w, vertical: 4),
+                              margin: const EdgeInsets.only(bottom: 50),
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 8, vertical: 4),
                               color: !Get.isDarkMode
                                   ? Themes.dark.highlightColor
                                   : Themes.light.primaryColor,

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:aniplay/themes/themes.dart';
 import 'package:aniplay/controllers/theme_controller.dart';
 import 'package:aniplay/views/widgets/details/details.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:aniplay/controllers/catalog_controller.dart';
 import 'package:aniplay/controllers/runtime_data_controller.dart';
 
@@ -17,11 +16,11 @@ class GridCatalog extends StatelessWidget {
         builder: (t) {
           return GetBuilder<CatalogController>(builder: (c) {
             return GridView.builder(
-              padding: EdgeInsets.symmetric(vertical: 100.h, horizontal: 5.w),
+              padding: const EdgeInsets.symmetric(vertical: 110, horizontal: 5),
               itemCount: RuntimeController.posters.length,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisSpacing: 20.w,
-                  mainAxisSpacing: 5.h,
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisSpacing: 20,
+                  mainAxisSpacing: 5,
                   childAspectRatio: (3 / 5),
                   crossAxisCount: 3),
               itemBuilder: (context, localindex) {

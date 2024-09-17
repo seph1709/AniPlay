@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:aniplay/themes/themes.dart';
 import 'package:aniplay/models/user_data_model.dart';
 import 'package:aniplay/controllers/theme_controller.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:aniplay/controllers/catalog_controller.dart';
 import 'package:aniplay/views/widgets/selection/selection.dart';
 
@@ -70,7 +70,7 @@ class Options extends StatelessWidget {
                                     : Themes.light.iconTheme.color,
                               ),
                               Padding(
-                                padding: EdgeInsets.only(right: 10.w),
+                                padding: const EdgeInsets.only(right: 10),
                                 child: Text(
                                   c.source.types.toList[UserData.selectedType]
                                       .key,

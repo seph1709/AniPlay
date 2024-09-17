@@ -1,6 +1,5 @@
 import 'package:shimmer/shimmer.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoadingItems extends StatelessWidget {
   const LoadingItems({super.key});
@@ -11,10 +10,10 @@ class LoadingItems extends StatelessWidget {
       baseColor: const Color.fromARGB(255, 16, 16, 16),
       highlightColor: const Color.fromARGB(255, 60, 60, 60),
       child: GridView.builder(
-        padding: const EdgeInsets.symmetric(vertical: 95, horizontal: 13).h,
+        padding: const EdgeInsets.symmetric(vertical: 95, horizontal: 13),
         itemCount: 15,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisSpacing: 20.w,
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisSpacing: 20,
             mainAxisSpacing: 0,
             childAspectRatio: (3 / 5),
             crossAxisCount: 3),
@@ -34,12 +33,12 @@ class LoadingItems extends StatelessWidget {
                           color: Colors.white,
                         )),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 5, right: 2, left: 2),
+                  const Padding(
+                    padding: EdgeInsets.only(top: 5, right: 2, left: 2),
                     child: Text(
                       "",
                       style: TextStyle(
-                          fontSize: 11.5.sp,
+                          fontSize: 11.5,
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
                           fontFamily: "Quicksand"),

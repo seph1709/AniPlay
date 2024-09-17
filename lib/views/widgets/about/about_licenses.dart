@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:aniplay/themes/themes.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PackagesLicenses extends StatelessWidget {
   const PackagesLicenses({super.key});
@@ -11,20 +10,20 @@ class PackagesLicenses extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 20.h),
+      padding: const EdgeInsets.only(top: 20),
       child: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(
-              height: 60.h,
+            const SizedBox(
+              height: 60,
             ),
             Image.asset(
-              height: 80.h,
-              width: 80.w,
+              height: 80,
+              width: 80,
               "assets/images/logo.png",
             ),
-            SizedBox(
-              height: 10.h,
+            const SizedBox(
+              height: 10,
             ),
             Text(
               "AniPlay",
@@ -32,7 +31,7 @@ class PackagesLicenses extends StatelessWidget {
                 color: !Get.isDarkMode
                     ? Themes.dark.primaryColor
                     : Themes.light.primaryColor,
-                fontSize: 17.sp,
+                fontSize: 17,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -44,26 +43,26 @@ class PackagesLicenses extends StatelessWidget {
                   color: !Get.isDarkMode
                       ? Themes.dark.primaryColor
                       : Themes.light.primaryColor,
-                  fontSize: 11.sp,
+                  fontSize: 11,
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(top: 50.h, left: 70.w, right: 70.w),
+              padding: const EdgeInsets.only(top: 50, left: 70, right: 70),
               child: Text(
                 "Anime streaming app that only scrapes content from the internet.",
                 style: TextStyle(
                   color: !Get.isDarkMode
                       ? Themes.dark.primaryColor
                       : Themes.light.primaryColor,
-                  fontSize: 14.sp,
+                  fontSize: 14,
                 ),
                 textAlign: TextAlign.center,
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(top: 30.h),
+              padding: const EdgeInsets.only(top: 30),
               child: InkWell(
                 onTapUp: (details) async {
                   await launchUrl(
@@ -80,8 +79,8 @@ class PackagesLicenses extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(
-                top: 30.h,
+              padding: const EdgeInsets.only(
+                top: 30,
               ),
               child: Text(
                 "Licenses",
@@ -89,7 +88,7 @@ class PackagesLicenses extends StatelessWidget {
                     color: !Get.isDarkMode
                         ? Themes.dark.primaryColor
                         : Themes.light.primaryColor,
-                    fontSize: 14.sp,
+                    fontSize: 14,
                     fontWeight: FontWeight.bold,
                     // letterSpacing: 2,
                     fontFamily: "Quicksand"),
@@ -103,14 +102,14 @@ class PackagesLicenses extends StatelessWidget {
                     color: !Get.isDarkMode
                         ? Themes.dark.primaryColor
                         : Themes.light.primaryColor,
-                    fontSize: 14.sp,
+                    fontSize: 14,
                     fontFamily: "Quicksand"),
                 textAlign: TextAlign.center,
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(
-                  left: 30.w, right: 30.w, top: 20.h, bottom: 100.h),
+              padding: const EdgeInsets.only(
+                  left: 30, right: 30, top: 20, bottom: 100),
               child: Column(
                 children: [
                   Row(
@@ -121,14 +120,13 @@ class PackagesLicenses extends StatelessWidget {
                           launchUrl(Uri.parse(
                               "https://raw.githubusercontent.com/flutter/flutter/master/LICENSE"));
                         },
-                        child: Text(
+                        child: const Text(
                           "Flutter,",
                           style: TextStyle(
-                              color: const Color.fromARGB(255, 0, 140, 255),
+                              color: Color.fromARGB(255, 0, 140, 255),
                               decoration: TextDecoration.underline,
-                              decorationColor:
-                                  const Color.fromARGB(255, 0, 140, 255),
-                              fontSize: 16.sp,
+                              decorationColor: Color.fromARGB(255, 0, 140, 255),
+                              fontSize: 16,
                               fontWeight: FontWeight.bold,
                               fontFamily: "Quicksand"),
                           textAlign: TextAlign.center,
@@ -139,14 +137,13 @@ class PackagesLicenses extends StatelessWidget {
                           launchUrl(Uri.parse(
                               "https://raw.githubusercontent.com/jonataslaw/getx/master/LICENSE"));
                         },
-                        child: Text(
+                        child: const Text(
                           "get,",
                           style: TextStyle(
-                              color: const Color.fromARGB(255, 0, 140, 255),
+                              color: Color.fromARGB(255, 0, 140, 255),
                               decoration: TextDecoration.underline,
-                              decorationColor:
-                                  const Color.fromARGB(255, 0, 140, 255),
-                              fontSize: 16.sp,
+                              decorationColor: Color.fromARGB(255, 0, 140, 255),
+                              fontSize: 16,
                               fontWeight: FontWeight.bold,
                               fontFamily: "Quicksand"),
                           textAlign: TextAlign.center,
@@ -157,14 +154,13 @@ class PackagesLicenses extends StatelessWidget {
                           launchUrl(Uri.parse(
                               "https://raw.githubusercontent.com/dart-lang/http/master/pkgs/http/LICENSE"));
                         },
-                        child: Text(
+                        child: const Text(
                           "http,",
                           style: TextStyle(
-                              color: const Color.fromARGB(255, 0, 140, 255),
+                              color: Color.fromARGB(255, 0, 140, 255),
                               decoration: TextDecoration.underline,
-                              decorationColor:
-                                  const Color.fromARGB(255, 0, 140, 255),
-                              fontSize: 16.sp,
+                              decorationColor: Color.fromARGB(255, 0, 140, 255),
+                              fontSize: 16,
                               fontWeight: FontWeight.bold,
                               fontFamily: "Quicksand"),
                           textAlign: TextAlign.center,
@@ -175,14 +171,13 @@ class PackagesLicenses extends StatelessWidget {
                           launchUrl(Uri.parse(
                               "https://raw.githubusercontent.com/dart-lang/html/main/LICENSE"));
                         },
-                        child: Text(
+                        child: const Text(
                           "html,",
                           style: TextStyle(
-                              color: const Color.fromARGB(255, 0, 140, 255),
+                              color: Color.fromARGB(255, 0, 140, 255),
                               decoration: TextDecoration.underline,
-                              decorationColor:
-                                  const Color.fromARGB(255, 0, 140, 255),
-                              fontSize: 16.sp,
+                              decorationColor: Color.fromARGB(255, 0, 140, 255),
+                              fontSize: 16,
                               fontWeight: FontWeight.bold,
                               fontFamily: "Quicksand"),
                           textAlign: TextAlign.center,
@@ -198,14 +193,13 @@ class PackagesLicenses extends StatelessWidget {
                           launchUrl(Uri.parse(
                               "https://raw.githubusercontent.com/muhammad369/ResponsiveGrid_Flutter/master/LICENSE"));
                         },
-                        child: Text(
+                        child: const Text(
                           "responsive_grid,",
                           style: TextStyle(
-                              color: const Color.fromARGB(255, 0, 140, 255),
+                              color: Color.fromARGB(255, 0, 140, 255),
                               decoration: TextDecoration.underline,
-                              decorationColor:
-                                  const Color.fromARGB(255, 0, 140, 255),
-                              fontSize: 16.sp,
+                              decorationColor: Color.fromARGB(255, 0, 140, 255),
+                              fontSize: 16,
                               fontWeight: FontWeight.bold,
                               fontFamily: "Quicksand"),
                           textAlign: TextAlign.center,
@@ -216,14 +210,13 @@ class PackagesLicenses extends StatelessWidget {
                           launchUrl(Uri.parse(
                               "https://raw.githubusercontent.com/hnvn/flutter_shimmer/master/LICENSE"));
                         },
-                        child: Text(
+                        child: const Text(
                           "shimmer,",
                           style: TextStyle(
-                              color: const Color.fromARGB(255, 0, 140, 255),
+                              color: Color.fromARGB(255, 0, 140, 255),
                               decoration: TextDecoration.underline,
-                              decorationColor:
-                                  const Color.fromARGB(255, 0, 140, 255),
-                              fontSize: 16.sp,
+                              decorationColor: Color.fromARGB(255, 0, 140, 255),
+                              fontSize: 16,
                               fontWeight: FontWeight.bold,
                               fontFamily: "Quicksand"),
                           textAlign: TextAlign.center,
@@ -239,14 +232,13 @@ class PackagesLicenses extends StatelessWidget {
                           launchUrl(Uri.parse(
                               "https://raw.githubusercontent.com/watery-desert/loading_animation_widget/main/LICENSE"));
                         },
-                        child: Text(
+                        child: const Text(
                           "loading_animation_widget,",
                           style: TextStyle(
-                              color: const Color.fromARGB(255, 0, 140, 255),
+                              color: Color.fromARGB(255, 0, 140, 255),
                               decoration: TextDecoration.underline,
-                              decorationColor:
-                                  const Color.fromARGB(255, 0, 140, 255),
-                              fontSize: 16.sp,
+                              decorationColor: Color.fromARGB(255, 0, 140, 255),
+                              fontSize: 16,
                               fontWeight: FontWeight.bold,
                               fontFamily: "Quicksand"),
                           textAlign: TextAlign.center,
@@ -262,14 +254,13 @@ class PackagesLicenses extends StatelessWidget {
                           launchUrl(Uri.parse(
                               "https://raw.githubusercontent.com/pichillilorenzo/flutter_inappwebview/master/LICENSE"));
                         },
-                        child: Text(
+                        child: const Text(
                           "flutter_inappwebview,",
                           style: TextStyle(
-                              color: const Color.fromARGB(255, 0, 140, 255),
+                              color: Color.fromARGB(255, 0, 140, 255),
                               decoration: TextDecoration.underline,
-                              decorationColor:
-                                  const Color.fromARGB(255, 0, 140, 255),
-                              fontSize: 16.sp,
+                              decorationColor: Color.fromARGB(255, 0, 140, 255),
+                              fontSize: 16,
                               fontWeight: FontWeight.bold,
                               fontFamily: "Quicksand"),
                           textAlign: TextAlign.center,
@@ -280,14 +271,13 @@ class PackagesLicenses extends StatelessWidget {
                           launchUrl(Uri.parse(
                               "https://raw.githubusercontent.com/jonataslaw/get_storage/master/LICENSE"));
                         },
-                        child: Text(
+                        child: const Text(
                           "get_storage,",
                           style: TextStyle(
-                              color: const Color.fromARGB(255, 0, 140, 255),
+                              color: Color.fromARGB(255, 0, 140, 255),
                               decoration: TextDecoration.underline,
-                              decorationColor:
-                                  const Color.fromARGB(255, 0, 140, 255),
-                              fontSize: 16.sp,
+                              decorationColor: Color.fromARGB(255, 0, 140, 255),
+                              fontSize: 16,
                               fontWeight: FontWeight.bold,
                               fontFamily: "Quicksand"),
                           textAlign: TextAlign.center,
@@ -303,14 +293,13 @@ class PackagesLicenses extends StatelessWidget {
                           launchUrl(Uri.parse(
                               "https://raw.githubusercontent.com/flutter/packages/main/packages/url_launcher/url_launcher/LICENSE"));
                         },
-                        child: Text(
+                        child: const Text(
                           "url_launcher,",
                           style: TextStyle(
-                              color: const Color.fromARGB(255, 0, 140, 255),
+                              color: Color.fromARGB(255, 0, 140, 255),
                               decoration: TextDecoration.underline,
-                              decorationColor:
-                                  const Color.fromARGB(255, 0, 140, 255),
-                              fontSize: 16.sp,
+                              decorationColor: Color.fromARGB(255, 0, 140, 255),
+                              fontSize: 16,
                               fontWeight: FontWeight.bold,
                               fontFamily: "Quicksand"),
                           textAlign: TextAlign.center,
@@ -321,14 +310,13 @@ class PackagesLicenses extends StatelessWidget {
                           launchUrl(Uri.parse(
                               "https://raw.githubusercontent.com/chouhan-rahul/icons_plus/main/LICENSE"));
                         },
-                        child: Text(
+                        child: const Text(
                           "icons_plus,",
                           style: TextStyle(
-                              color: const Color.fromARGB(255, 0, 140, 255),
+                              color: Color.fromARGB(255, 0, 140, 255),
                               decoration: TextDecoration.underline,
-                              decorationColor:
-                                  const Color.fromARGB(255, 0, 140, 255),
-                              fontSize: 16.sp,
+                              decorationColor: Color.fromARGB(255, 0, 140, 255),
+                              fontSize: 16,
                               fontWeight: FontWeight.bold,
                               fontFamily: "Quicksand"),
                           textAlign: TextAlign.center,

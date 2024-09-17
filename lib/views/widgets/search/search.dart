@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:aniplay/themes/themes.dart';
 import 'package:aniplay/controllers/search_controller.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:aniplay/controllers/catalog_controller.dart';
 import 'package:aniplay/views/widgets/search/search._result.dart';
 
@@ -40,9 +40,9 @@ class _SearchViewState extends State<SearchView> {
           body: SafeArea(
             child: Stack(
               children: [
-                Padding(
-                  padding: EdgeInsets.only(top: 70.h, left: 20.w),
-                  child: const SearchResult(),
+                const Padding(
+                  padding: EdgeInsets.only(top: 70, left: 20),
+                  child: SearchResult(),
                 ),
                 Row(
                   children: [
@@ -53,9 +53,9 @@ class _SearchViewState extends State<SearchView> {
                         s.textController.text = '';
                         s.resultItemPerSource.clear();
                       },
-                      child: SizedBox(
-                        width: 50.w,
-                        child: const Icon(
+                      child: const SizedBox(
+                        width: 50,
+                        child: Icon(
                           Icons.arrow_back_ios_rounded,
                           size: 25,
                           color: Colors.grey,
@@ -63,8 +63,8 @@ class _SearchViewState extends State<SearchView> {
                       ),
                     ),
                     Container(
-                      height: 55.h,
-                      width: MediaQuery.of(context).size.width - 50.w,
+                      height: 55,
+                      width: MediaQuery.of(context).size.width - 50,
                       padding: const EdgeInsets.symmetric(
                           vertical: 10, horizontal: 10),
                       child: Stack(
@@ -95,13 +95,14 @@ class _SearchViewState extends State<SearchView> {
                                           searchVAlue: value,
                                         ),
                                         transition: Transition.downToUp);
+                                    s.focusNode.unfocus();
                                   }
                                 },
                                 style: TextStyle(
                                     color: !Get.isDarkMode
                                         ? Themes.dark.primaryColor
                                         : Themes.light.primaryColor,
-                                    fontSize: 15.sp,
+                                    fontSize: 15,
                                     letterSpacing: 1),
                                 decoration: InputDecoration.collapsed(
                                   hintText: "Search anything...",

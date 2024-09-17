@@ -34,6 +34,4 @@ class ThemeController extends GetxController {
         systemNavigationBarColor:
             isDarkMode ? Themes.dark.primaryColor : Themes.light.primaryColor));
   }
-
-  
 }

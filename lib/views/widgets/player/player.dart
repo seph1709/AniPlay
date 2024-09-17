@@ -2,41 +2,39 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:aniplay/themes/themes.dart';
+import 'package:get/get.dart';
+import 'package:icons_plus/icons_plus.dart';
 import 'package:video_player/video_player.dart';
-import 'package:flick_video_player/flick_video_player.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:aniplay/controllers/runtime_data_controller.dart';
-import 'package:aniplay/views/widgets/player/player_landscape_controls.dart';
+import 'package:lecle_yoyo_player/lecle_yoyo_player.dart';
 
 class LandscapePlayer extends StatefulWidget {
   final String vidUrl;
   final Map<String, String> headers;
+  final String title;
+  final int epi;
   const LandscapePlayer(
-      {super.key, required this.vidUrl, required this.headers});
+      {super.key,
+      required this.vidUrl,
+      required this.headers,
+      required this.title,
+      required this.epi});
 
   @override
   LandscapePlayerState createState() => LandscapePlayerState();
 }
 
 class LandscapePlayerState extends State<LandscapePlayer> {
-  late FlickManager flickManager;
-
   @override
   void initState() {
     super.initState();
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
     log(widget.vidUrl);
     log(widget.headers.toString());
-    flickManager = FlickManager(
-      videoPlayerController: VideoPlayerController.networkUrl(
-          Uri.parse(widget.vidUrl),
-          httpHeaders: widget.headers),
-    );
   }
 
   @override
   void dispose() async {
     super.dispose();
-    flickManager.dispose();
   }
 
   @override
@@ -44,54 +42,67 @@ class LandscapePlayerState extends State<LandscapePlayer> {
     return Scaffold(
       backgroundColor: Themes.dark.scaffoldBackgroundColor,
       body: Center(
-        child: Stack(
-          children: [
-            AspectRatio(
-              aspectRatio: 4 / 3,
-              child: FlickVideoPlayer(
-                flickManager: flickManager,
-                preferredDeviceOrientation: const [
-                  DeviceOrientation.landscapeRight,
-                  DeviceOrientation.landscapeLeft,
-                ],
-                systemUIOverlay: const [],
-                flickVideoWithControls: FlickVideoWithControls(
-                  playerErrorFallback: Center(
-                    child: Padding(
-                      padding: EdgeInsets.only(top: 20.h),
-                      child: IntrinsicHeight(
-                        child: Column(
-                          children: [
-                            const Icon(
-                              Icons.error,
-                              color: Colors.white,
-                            ),
-                            SizedBox(
-                              height: 20.h,
-                            ),
-                            Text(
-                              "cannot find the file :(",
-                              style:
-                                  TextStyle(fontSize: 6.sp, letterSpacing: 1.5),
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  controls: LandscapePlayerControls(
-                    iconSize: 20,
-                    fontSize: 7.sp,
-                  ),
-                  playerLoadingFallback: Center(
-                    child: CircularProgressIndicator(
-                      color: RuntimeController.secondaryColor,
-                    ),
-                  ),
+        child: YoYoPlayer(
+          aspectRatio: 16 / 9,
+          url: widget.vidUrl,
+          headers: widget.headers,
+          title: Row(
+            children: [
+              SizedBox(
+                width: 350,
+                child: Text(
+                  "#${widget.epi} ${widget.title}",
+                  style: const TextStyle(fontSize: 14, color: Colors.white),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                 ),
-              ),
+              )
+            ],
+          ),
+          videoStyle: VideoStyle(
+            qualityButtonAndFullScrIcoSpace: 80,
+            linearProgressIndicatorMinHeight: 4,
+            fullscreenIcon: const SizedBox.shrink(),
+            qualityOptionStyle:
+                const TextStyle(fontSize: 14, color: Colors.white),
+            qualityStyle: const TextStyle(fontSize: 14, color: Colors.white),
+            videoSeekStyle: const TextStyle(fontSize: 14, color: Colors.white),
+            videoDurationStyle:
+                const TextStyle(fontSize: 14, color: Colors.white),
+            playIcon: const Icon(Bootstrap.play_circle,
+                size: 35, color: Colors.white),
+            pauseIcon: const Icon(Bootstrap.pause_circle,
+                size: 35, color: Colors.white),
+            forwardIcon: const Icon(Bootstrap.skip_forward,
+                size: 30, color: Colors.white),
+            backwardIcon: const Icon(Bootstrap.skip_backward,
+                size: 30, color: Colors.white),
+            bottomBarPadding: const EdgeInsets.only(bottom: 10),
+            videoDurationsPadding: const EdgeInsets.only(top: 10),
+            allowScrubbing: true,
+            spaceBetweenBottomBarButtons: 30,
+            progressIndicatorPadding: const EdgeInsets.all(5),
+            orientation: [
+              DeviceOrientation.landscapeRight,
+              DeviceOrientation.landscapeLeft,
+            ],
+            qualityOptionsBgColor: const Color.fromARGB(59, 0, 0, 0),
+            videoQualityBgColor: const Color.fromARGB(59, 0, 0, 0),
+            progressIndicatorColors: VideoProgressColors(
+              playedColor: Themes.dark.secondaryHeaderColor,
+              bufferedColor: const Color.fromARGB(150, 253, 94, 83),
+              backgroundColor: const Color.fromARGB(59, 0, 0, 0),
             ),
-          ],
+          ),
+          videoLoadingStyle: VideoLoadingStyle(
+            loadingText: "",
+            loadingBackgroundColor: Get.isDarkMode
+                ? Themes.dark.primaryColor
+                : Themes.light.primaryColor,
+            loadingIndicatorColor: Themes.dark.secondaryHeaderColor,
+            loadingIndicatorValueColor: Themes.dark.secondaryHeaderColor,
+          ),
+          displayFullScreenAfterInit: true,
         ),
       ),
     );

@@ -52,6 +52,8 @@ class UserData {
     episodeUrls.add(data["episodeUrlsList"]);
     originHost.add(data["originhost"]);
     typeIndex.add(data["typeIndex"]);
+    log("----- episodes -----");
+    log(episodeUrls.toString());
   }
 
   static removefavoriteItemFromIndex(int index) {

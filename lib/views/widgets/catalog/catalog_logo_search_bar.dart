@@ -4,7 +4,6 @@ import 'package:aniplay/themes/themes.dart';
 import 'package:aniplay/views/widgets/search/search.dart';
 import 'package:aniplay/controllers/theme_controller.dart';
 import 'package:aniplay/controllers/search_controller.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:aniplay/controllers/catalog_controller.dart';
 
 class LogoAndSearchBar extends StatelessWidget {
@@ -24,16 +23,16 @@ class LogoAndSearchBar extends StatelessWidget {
               child: Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(left: 15).w,
+                    padding: const EdgeInsets.only(left: 15),
                     child: Image.asset(
                       "assets/images/logo.png",
-                      width: 35.w,
-                      height: 35.h,
+                      width: 35,
+                      height: 35,
                     ),
                   ),
                   Container(
-                    height: 55.h,
-                    width: MediaQuery.of(context).size.width - 85.w,
+                    height: 60,
+                    width: MediaQuery.of(context).size.width - 85,
                     padding: const EdgeInsets.symmetric(
                         vertical: 10, horizontal: 10),
                     child: Stack(
@@ -53,8 +52,12 @@ class LogoAndSearchBar extends StatelessWidget {
                             return TextField(
                               keyboardType: TextInputType.text,
                               textInputAction: TextInputAction.search,
+                              focusNode: s.focusNode,
                               controller: s.textController,
                               onEditingComplete: () {},
+                              onTapOutside: (event) {
+                                s.focusNode.unfocus();
+                              },
                               onSubmitted: (value) {
                                 if (value.isNotEmpty) {
                                   c.getSerachItemResult(value);
@@ -70,7 +73,7 @@ class LogoAndSearchBar extends StatelessWidget {
                                   color: !t.isDarkMode
                                       ? Themes.dark.primaryColor
                                       : Themes.light.primaryColor,
-                                  fontSize: 15.sp,
+                                  fontSize: 15,
                                   letterSpacing: 1),
                               decoration: InputDecoration.collapsed(
                                 hintText: "Search anything...",

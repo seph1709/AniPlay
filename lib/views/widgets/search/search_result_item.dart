@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:aniplay/themes/themes.dart';
 import 'package:aniplay/controllers/search_controller.dart';
 import 'package:aniplay/views/widgets/details/details.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:aniplay/controllers/catalog_controller.dart';
 
 class ResultContainer extends StatelessWidget {
@@ -37,7 +37,7 @@ class ResultContainer extends StatelessWidget {
                   s.resultItemPerSource[i].values.first["posters"].isNotEmpty
                       ? Container(
                           margin: const EdgeInsets.only(top: 10),
-                          height: 180.h,
+                          height: 180,
                           width: MediaQuery.of(context).size.width,
                           child: ListView.builder(
                             itemCount: s.resultItemPerSource[i].values
@@ -78,7 +78,7 @@ class ResultContainer extends StatelessWidget {
                                   child: AspectRatio(
                                     aspectRatio: 3 / 4.7,
                                     child: Padding(
-                                      padding: EdgeInsets.only(right: 20.w),
+                                      padding: const EdgeInsets.only(right: 20),
                                       child: Column(
                                         children: [
                                           AspectRatio(
@@ -121,8 +121,8 @@ class ResultContainer extends StatelessWidget {
                                               ),
                                             ),
                                           ),
-                                          SizedBox(
-                                            height: 5.h,
+                                          const SizedBox(
+                                            height: 5,
                                           ),
                                           Text(
                                             s.resultItemPerSource[i].values
@@ -148,8 +148,8 @@ class ResultContainer extends StatelessWidget {
                             },
                           ),
                         )
-                      : SizedBox(
-                          height: 20.h,
+                      : const SizedBox(
+                          height: 20,
                         ),
                 ],
               ),

@@ -23,9 +23,7 @@ class CatalogController extends GetxController {
 
   @override
   void onInit() async {
-
     scrollController = ScrollController();
-
     box = Hive.box('myBox');
     if (box.get('poster') != null) {
       await setAppData();

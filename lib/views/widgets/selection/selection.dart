@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:aniplay/themes/themes.dart';
 import 'package:aniplay/models/user_data_model.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:aniplay/controllers/catalog_controller.dart';
 
 class SelectionCataglog extends StatelessWidget {
@@ -34,7 +34,7 @@ class SelectionCataglog extends StatelessWidget {
                     color: !Get.isDarkMode
                         ? Themes.dark.primaryColor
                         : Themes.light.primaryColor,
-                    fontSize: 25.sp),
+                    fontSize: 25),
               )
             ],
           ),
@@ -60,7 +60,7 @@ class SelectionCataglog extends StatelessWidget {
             Get.back();
           },
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 10.h),
+            padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

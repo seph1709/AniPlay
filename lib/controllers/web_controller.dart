@@ -25,11 +25,17 @@ class WebController extends GetxController {
   }
 
   void gotToPlayer() {
-    Get.off(
-        LandscapePlayer(
+    log(RuntimeController.preventPlayer.toString());
+    if (RuntimeController.preventPlayer == false) {
+      Get.off(
+          LandscapePlayer(
             vidUrl: RuntimeController.vidUrl,
-            headers: RuntimeController.headers),
-        transition: Transition.native);
+            headers: RuntimeController.headers,
+            title: RuntimeController.selectedFilmData["title"],
+            epi: RuntimeController.epi,
+          ),
+          transition: Transition.native);
+    }
   }
 
   Future<void> getResourceAndPlay(dynamic result, Goto gotoData) async {

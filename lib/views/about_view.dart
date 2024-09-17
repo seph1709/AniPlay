@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:aniplay/themes/themes.dart';
 import 'package:aniplay/controllers/theme_controller.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:aniplay/views/widgets/about/about_licenses.dart';
 
 class About extends StatelessWidget {
@@ -22,7 +22,7 @@ class About extends StatelessWidget {
                 child: Stack(
                   children: [
                     Container(
-                      padding: EdgeInsets.all(10.h),
+                      padding: const EdgeInsets.all(10),
                       child: IntrinsicHeight(
                         child: Stack(
                           children: [
@@ -30,11 +30,11 @@ class About extends StatelessWidget {
                             Align(
                               alignment: Alignment.topLeft,
                               child: Container(
-                                margin: EdgeInsets.only(
-                                  bottom: 10.h,
+                                margin: const EdgeInsets.only(
+                                  bottom: 10,
                                 ),
-                                height: 20.h,
-                                width: 100.w,
+                                height: 20,
+                                width: 100,
                                 decoration: BoxDecoration(
                                     gradient: const LinearGradient(colors: [
                                       Color.fromARGB(255, 255, 17, 0),
@@ -43,15 +43,15 @@ class About extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(15)),
                               ),
                             ),
-                            Align(
+                            const Align(
                               alignment: Alignment.topLeft,
                               child: Padding(
-                                padding: EdgeInsets.only(left: 5.w),
+                                padding: EdgeInsets.only(left: 5),
                                 child: Text(
                                   "About",
                                   style: TextStyle(
                                       color: Colors.white,
-                                      fontSize: 18.sp,
+                                      fontSize: 18,
                                       letterSpacing: .5,
                                       fontWeight: FontWeight.bold,
                                       fontFamily: "QuicksandBold"),

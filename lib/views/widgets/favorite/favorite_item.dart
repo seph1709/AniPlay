@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:aniplay/themes/themes.dart';
 import 'package:aniplay/views/widgets/details/details.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:aniplay/controllers/catalog_controller.dart';
 
 class ItemPoster extends StatelessWidget {
@@ -23,6 +22,7 @@ class ItemPoster extends StatelessWidget {
               c.getFavoritePosters()[index],
               c.getOriginHostFromFavorite()[index],
               c.getTypeIndex()[index],
+              false,
               true);
 
           // log("meee" + RuntimeController.selectedFilmData.toString());
@@ -42,7 +42,36 @@ class ItemPoster extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                   child: AspectRatio(
                     aspectRatio: 3 / 4,
-                    child: Image.network(c.getFavoritePosters()[index]),
+                    child: Image.network(
+                      c.getFavoritePosters()[index],
+                      errorBuilder: (context, error, stackTrace) => Stack(
+                        children: [
+                          Container(
+                              color: !Get.isDarkMode
+                                  ? Themes.dark.primaryColor
+                                  : const Color.fromARGB(255, 16, 16, 16)),
+                          Center(
+                            child: Icon(
+                              Icons.error_outline_rounded,
+                              color: Themes.light.primaryColor,
+                            ),
+                          )
+                        ],
+                      ),
+                      loadingBuilder: (context, child, loadingProgress) {
+                        if (loadingProgress?.expectedTotalBytes == null) {
+                          return child;
+                        } else {
+                          return Container(
+                            color: const Color.fromARGB(255, 16, 16, 16),
+                          );
+                        }
+                      },
+                      frameBuilder:
+                          (context, child, frame, wasSynchronouslyLoaded) {
+                        return child;
+                      },
+                    ),
                   ),
                 ),
                 Padding(
@@ -50,7 +79,7 @@ class ItemPoster extends StatelessWidget {
                   child: Text(
                     c.getFavoriteTItles()[index],
                     style: TextStyle(
-                        fontSize: 11.5.sp,
+                        fontSize: 11.5,
                         color: !Get.isDarkMode
                             ? Themes.dark.primaryColor
                             : Themes.light.primaryColor,

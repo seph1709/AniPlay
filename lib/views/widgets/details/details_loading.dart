@@ -2,7 +2,6 @@ import 'package:get/get.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:flutter/material.dart';
 import 'package:aniplay/themes/themes.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoadingFilmDetails extends StatelessWidget {
   const LoadingFilmDetails({super.key});
@@ -28,7 +27,7 @@ class LoadingFilmDetails extends StatelessWidget {
                 color: Get.isDarkMode
                     ? Themes.dark.primaryColor
                     : Themes.light.primaryColor,
-                height: 300.h,
+                height: 300,
                 width: MediaQuery.of(context).size.width,
               ),
               Padding(

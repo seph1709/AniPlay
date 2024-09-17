@@ -5,7 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/foundation.dart';
 import 'package:aniplay/views/splash_view.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
 void main() async {
@@ -16,8 +16,11 @@ void main() async {
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
   ]);
+  SystemChrome.setEnabledSystemUIMode(
+    SystemUiMode.manual,
+    overlays: SystemUiOverlay.values,
+  );
 
-  await ScreenUtil.ensureScreenSize();
   final Directory appDocDir = await getApplicationDocumentsDirectory();
   Hive.init(appDocDir.path);
   await Hive.openBox("theme");
@@ -25,8 +28,6 @@ void main() async {
   // await Hive.deleteBoxFromDisk("theme");
   // await Hive.deleteBoxFromDisk("myBox");
   runApp(
-    const ScreenUtilInit(
-      child: SplashView(),
-    ),
+    const SplashView(),
   );
 }

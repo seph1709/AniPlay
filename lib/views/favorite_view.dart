@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:aniplay/themes/themes.dart';
 import 'package:aniplay/controllers/theme_controller.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:aniplay/controllers/catalog_controller.dart';
 import 'package:aniplay/views/widgets/favorite/favorite_item.dart';
 
@@ -29,28 +29,30 @@ class Favorite extends StatelessWidget {
                             c.getFavoriteTItles().isNotEmpty
                                 ? GridView.builder(
                                     padding: const EdgeInsets.symmetric(
-                                            vertical: 50, horizontal: 13)
-                                        .h,
+                                        vertical: 50, horizontal: 13),
                                     itemCount: c.getFavoriteTItles().length,
                                     gridDelegate:
-                                        SliverGridDelegateWithFixedCrossAxisCount(
-                                            crossAxisSpacing: 20.w,
-                                            mainAxisSpacing: 5.h,
+                                        const SliverGridDelegateWithFixedCrossAxisCount(
+                                            crossAxisSpacing: 20,
+                                            mainAxisSpacing: 5,
                                             childAspectRatio: (3 / 5),
                                             crossAxisCount: 3),
                                     itemBuilder: (context, index) {
                                       return ItemPoster(index: index);
                                     },
                                   )
-                                : Center(
+                                : const Center(
                                     child: Text(
                                       "EMPTY",
                                       style: TextStyle(
-                                          color: Colors.grey, fontSize: 20.sp),
+                                          color: Colors.grey, fontSize: 20),
                                     ),
                                   ),
                             Container(
-                              padding: EdgeInsets.all(10.h),
+                              color: Get.isDarkMode
+                                  ? Themes.dark.scaffoldBackgroundColor
+                                  : Themes.light.scaffoldBackgroundColor,
+                              padding: const EdgeInsets.all(10),
                               child: IntrinsicHeight(
                                 child: Stack(
                                   children: [
@@ -59,8 +61,8 @@ class Favorite extends StatelessWidget {
                                       child: Container(
                                         margin: const EdgeInsets.only(
                                             bottom: 10, right: 0, left: 0),
-                                        height: 20.h,
-                                        width: 180.w,
+                                        height: 20,
+                                        width: 180,
                                         decoration: BoxDecoration(
                                             gradient:
                                                 const LinearGradient(colors: [
@@ -71,15 +73,15 @@ class Favorite extends StatelessWidget {
                                                 BorderRadius.circular(15)),
                                       ),
                                     ),
-                                    Align(
+                                    const Align(
                                       alignment: Alignment.centerLeft,
                                       child: Padding(
-                                        padding: EdgeInsets.only(left: 5.w),
+                                        padding: EdgeInsets.only(left: 5),
                                         child: Text(
                                           "My Favorites",
                                           style: TextStyle(
                                               color: Colors.white,
-                                              fontSize: 18.sp,
+                                              fontSize: 18,
                                               letterSpacing: .5,
                                               fontWeight: FontWeight.bold,
                                               fontFamily: "QuicksandBold"),

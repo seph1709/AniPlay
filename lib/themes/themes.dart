@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Themes {
   static final light = ThemeData(
@@ -10,13 +9,13 @@ class Themes {
     scaffoldBackgroundColor: Colors.white,
     iconTheme: const IconThemeData(color: Color.fromARGB(255, 255, 17, 0)),
     hintColor: Colors.grey,
-    textTheme: TextTheme(
-      bodySmall: TextStyle(fontSize: 13.sp, color: Colors.black),
-      titleMedium: TextStyle(fontSize: 17.sp, color: Colors.black),
+    textTheme: const TextTheme(
+      bodySmall: TextStyle(fontSize: 13, color: Colors.black),
+      titleMedium: TextStyle(fontSize: 17, color: Colors.black),
       titleLarge: TextStyle(
-          fontSize: 19.sp, fontWeight: FontWeight.bold, color: Colors.black),
+          fontSize: 19, fontWeight: FontWeight.bold, color: Colors.black),
       titleSmall: TextStyle(
-        fontSize: 11.5.sp,
+        fontSize: 11.5,
         color: Colors.black,
       ),
     ),
@@ -31,13 +30,13 @@ class Themes {
     iconTheme: const IconThemeData(color: Colors.white),
     scaffoldBackgroundColor: const Color.fromARGB(255, 0, 0, 0),
     hintColor: Colors.grey,
-    textTheme: TextTheme(
-      bodySmall: TextStyle(fontSize: 13.sp, color: Colors.white),
-      titleMedium: TextStyle(fontSize: 17.sp, color: Colors.white),
+    textTheme: const TextTheme(
+      bodySmall: TextStyle(fontSize: 13, color: Colors.white),
+      titleMedium: TextStyle(fontSize: 17, color: Colors.white),
       titleLarge: TextStyle(
-          fontSize: 19.sp, fontWeight: FontWeight.bold, color: Colors.white),
+          fontSize: 19, fontWeight: FontWeight.bold, color: Colors.white),
       titleSmall: TextStyle(
-        fontSize: 11.5.sp,
+        fontSize: 11.5,
         color: Colors.white,
       ),
     ),

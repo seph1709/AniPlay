@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:aniplay/themes/themes.dart';
 import 'package:aniplay/controllers/theme_controller.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:aniplay/controllers/catalog_controller.dart';
 import 'package:aniplay/controllers/runtime_data_controller.dart';
 
@@ -17,7 +17,7 @@ class NavigationBottom extends StatelessWidget {
         id: "theme",
         builder: (t) {
           return Container(
-            padding: EdgeInsets.symmetric(vertical: 10.h),
+            padding: const EdgeInsets.symmetric(vertical: 10),
             width: width,
             decoration: const BoxDecoration(
               border: Border(
@@ -65,7 +65,7 @@ class NavigationBottom extends StatelessWidget {
                                                   : Themes.light.highlightColor
                                               : const Color.fromARGB(
                                                   255, 140, 140, 140),
-                                          fontSize: 16.sp,
+                                          fontSize: 16,
                                           letterSpacing: 1,
                                           fontFamily: "QuicksandBold"),
                                     ),
@@ -130,7 +130,7 @@ class NavigationBottom extends StatelessWidget {
                                                   : Themes.light.highlightColor
                                               : const Color.fromARGB(
                                                   255, 140, 140, 140),
-                                          fontSize: 16.sp,
+                                          fontSize: 16,
                                           letterSpacing: 1,
                                           fontFamily: "QuicksandBold"),
                                     ),
@@ -192,7 +192,7 @@ class NavigationBottom extends StatelessWidget {
                                                   : Themes.light.highlightColor
                                               : const Color.fromARGB(
                                                   255, 140, 140, 140),
-                                          fontSize: 16.sp,
+                                          fontSize: 16,
                                           letterSpacing: 1,
                                           fontFamily: "QuicksandBold"),
                                     ),

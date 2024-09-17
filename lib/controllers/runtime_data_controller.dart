@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:flutter/services.dart';
@@ -24,6 +26,9 @@ class RuntimeController extends GetxController {
   static var allowReload = false.obs;
   static var secondaryColor = const Color.fromARGB(255, 255, 17, 0);
   static var secondaryColorFade = const Color.fromARGB(255, 255, 90, 79);
+  static String title = "";
+  static int epi = 1;
+  static bool preventPlayer = false;
 
   static void reset() {
     progress.value = 0;
@@ -32,6 +37,7 @@ class RuntimeController extends GetxController {
     allowVidPlayer = true;
     notice.value = "";
     allowReload.value = false;
+    preventPlayer = true;
 
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
@@ -51,6 +57,7 @@ class RuntimeController extends GetxController {
   static void routingCallback(Routing? value) {
     if (value?.previous == "/FilmDetails") {
       RuntimeController.reset();
+      log("reseted");
     }
   }
 }
