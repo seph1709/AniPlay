@@ -359,7 +359,7 @@
               "attribute": "href"
             },
             "goto":{
-              "host":"vidmoly.to",
+              "host":"filemoon.sx",
               "script":"jwplayer().getPlaylistItem()['file']"
             }
             
