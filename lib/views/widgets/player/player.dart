@@ -59,6 +59,7 @@ class LandscapePlayerState extends State<LandscapePlayer> {
               )
             ],
           ),
+          qualityOptionPadiingRight: 40,
           videoStyle: VideoStyle(
             qualityButtonAndFullScrIcoSpace: 80,
             linearProgressIndicatorMinHeight: 4,
