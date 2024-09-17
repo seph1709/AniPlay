@@ -1,9 +1,9 @@
 import 'dart:developer';
-import 'package:dio/dio.dart';
 import 'package:get/get.dart';
 import 'package:html/dom.dart';
 import 'package:html/parser.dart';
 import 'package:html/dom.dart' as dom;
+import 'package:http/http.dart' as http;
 import 'package:aniplay/models/source_model.dart';
 import 'package:aniplay/models/catalog_model.dart';
 import 'package:aniplay/controllers/search_controller.dart';
@@ -136,21 +136,19 @@ class ElementHandler {
     final rawUrl =
         document.querySelector(selector)?.attributes[attribute].toString();
 
-    final dio = Dio();
-
     final url = Uri.parse(rawUrl ?? "")
         .replace(scheme: "https", host: originFavSource.host)
         .toString();
     log(url);
     dynamic result;
     try {
-      result = await dio.get(url);
+      result = await http.get(Uri.parse(url));
     } catch (e) {
       log(e.toString());
     }
 
     if (result.statusCode == 200) {
-      return parse(result.data.toString());
+      return parse(result.body.toString());
     } else {
       return document;
     }
