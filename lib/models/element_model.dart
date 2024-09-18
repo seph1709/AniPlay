@@ -54,7 +54,6 @@ class ElementHandler {
     if (updateCatalog) {
       RuntimeController.posters = Items.postersUrl;
       RuntimeController.titles = Items.titles;
-
       RuntimeController.moreDetailsUrls = Items.detailsPageUrls;
       RuntimeController.itemLoaded.value = true;
       return {};
@@ -117,7 +116,6 @@ class ElementHandler {
     }
 
     final descriptionSelector = description.querySelector.selector;
-
     final descriptionElement = document.querySelector(descriptionSelector);
     return descriptionElement == null
         ? "No Descriptipn"
@@ -135,7 +133,9 @@ class ElementHandler {
     final url = Uri.parse(rawUrl ?? "")
         .replace(scheme: "https", host: originFavSource.host)
         .toString();
+
     dynamic result;
+
     try {
       result = await http.get(Uri.parse(url));
     } catch (e) {

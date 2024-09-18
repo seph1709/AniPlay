@@ -195,8 +195,6 @@ class FilmDetails extends StatelessWidget {
                             alignment: Alignment.topRight,
                             child: GestureDetector(
                               onTapUp: (details) async {
-                                //
-
                                 if (!c.getFavoriteTItles().contains(title)) {
                                   await c.addToFavorite();
                                   log("added");
@@ -207,7 +205,9 @@ class FilmDetails extends StatelessWidget {
                                           element ==
                                           RuntimeController
                                               .selectedFilmData["poster"]);
-                                  if (index >= 0) c.removeFromFavorite(index);
+                                  if (index >= 0) {
+                                    await c.removeFromFavorite(index);
+                                  }
                                 }
                               },
                               child: Padding(

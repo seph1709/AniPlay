@@ -78,7 +78,7 @@ class CatalogController extends GetxController {
         .toString();
   }
 
-  void removeFromFavorite(int index) async {
+  Future<void> removeFromFavorite(int index) async {
     UserData.removefavoriteItemFromIndex(index);
     update(["favoriteGrid", "favoriteIcon"]);
     await saveAppData();
@@ -153,7 +153,7 @@ class CatalogController extends GetxController {
     }
   }
 
-  getSerachItemResult(String value) async {
+  Future<void> getSerachItemResult(String value) async {
     final SearchResultController r = Get.find();
     r.resultItemPerSource.clear();
     for (var currentSourceMap in UserData.sources) {
@@ -242,7 +242,7 @@ class CatalogController extends GetxController {
         favIndex);
   }
 
-  void setSelectedFilmData(
+  Future<void> setSelectedFilmData(
       String url,
       int? indexFromCatalog,
       Source originSourceFav,
