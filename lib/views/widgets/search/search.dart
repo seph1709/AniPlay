@@ -8,25 +8,25 @@ import 'package:aniplay/views/widgets/search/search._result.dart';
 
 class SearchView extends StatefulWidget {
   final String searchVAlue;
-  const SearchView({super.key, required this.searchVAlue});
+  final TextEditingController textEditingController;
+  const SearchView(
+      {super.key,
+      required this.searchVAlue,
+      required this.textEditingController});
 
   @override
   State<SearchView> createState() => _SearchViewState();
 }
 
 class _SearchViewState extends State<SearchView> {
-  late TextEditingController textEditingController;
-
   @override
   void initState() {
     super.initState();
-    textEditingController = TextEditingController()..text = widget.searchVAlue;
   }
 
   @override
   void dispose() {
     super.dispose();
-    FocusManager.instance.primaryFocus?.unfocus();
   }
 
   @override
@@ -48,10 +48,10 @@ class _SearchViewState extends State<SearchView> {
                   children: [
                     GestureDetector(
                       onTapUp: (details) {
-                        Get.back();
                         final SearchResultController s = Get.find();
-                        s.textController.text = '';
+                        widget.textEditingController.clear();
                         s.resultItemPerSource.clear();
+                        Get.back();
                       },
                       child: const SizedBox(
                         width: 50,
@@ -63,8 +63,8 @@ class _SearchViewState extends State<SearchView> {
                       ),
                     ),
                     Container(
-                      height: 55,
-                      width: MediaQuery.of(context).size.width - 50,
+                      height: 60,
+                      width: 310,
                       padding: const EdgeInsets.symmetric(
                           vertical: 10, horizontal: 10),
                       child: Stack(
@@ -82,20 +82,15 @@ class _SearchViewState extends State<SearchView> {
                             child: GetBuilder<SearchResultController>(
                                 builder: (s) {
                               return TextField(
-                                focusNode: s.focusNode,
                                 keyboardType: TextInputType.text,
                                 textInputAction: TextInputAction.search,
-                                controller: textEditingController,
+                                controller: widget.textEditingController,
                                 onEditingComplete: () {},
                                 onSubmitted: (value) {
                                   if (value.isNotEmpty) {
                                     c.getSerachItemResult(value);
-                                    Get.to(
-                                        SearchView(
-                                          searchVAlue: value,
-                                        ),
-                                        transition: Transition.downToUp);
-                                    s.focusNode.unfocus();
+                                    FocusManager.instance.primaryFocus
+                                        ?.unfocus();
                                   }
                                 },
                                 style: TextStyle(
@@ -119,15 +114,16 @@ class _SearchViewState extends State<SearchView> {
                             alignment: Alignment.centerRight,
                             child: GestureDetector(
                               onTapUp: (details) {
-                                textEditingController.clear();
+                                widget.textEditingController.clear();
                               },
                               child: Padding(
                                 padding: const EdgeInsets.only(right: 10),
                                 child: ListenableBuilder(
-                                    listenable: textEditingController,
+                                    listenable: widget.textEditingController,
                                     builder: (context, w) {
                                       return Icon(
-                                        textEditingController.text.isEmpty
+                                        widget.textEditingController.text
+                                                .isEmpty
                                             ? Icons.search_rounded
                                             : Icons.close,
                                         color: const Color.fromARGB(

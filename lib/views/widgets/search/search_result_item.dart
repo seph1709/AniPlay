@@ -17,28 +17,28 @@ class ResultContainer extends StatelessWidget {
         () => Column(
           children: [
             for (var i = 0; i < s.resultItemPerSource.length; i++)
-              // for (var n = 0; i < c.resultItemPerSource.length; n++)
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
-                    width: MediaQuery.of(context).size.width,
-                    child: Text(
-                      s.resultItemPerSource[i].keys.first,
-                      style: TextStyle(
-                          color: !Get.isDarkMode
-                              ? Themes.dark.primaryColor
-                              : Themes.light.primaryColor,
-                          fontSize: 19),
-                      textAlign: TextAlign.start,
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        s.resultItemPerSource[i].keys.first,
+                        style: TextStyle(
+                            color: !Get.isDarkMode
+                                ? Themes.dark.primaryColor
+                                : Themes.light.primaryColor,
+                            fontSize: 19),
+                        textAlign: TextAlign.start,
+                      ),
                     ),
                   ),
                   s.resultItemPerSource[i].values.first["posters"].isNotEmpty
                       ? Container(
                           margin: const EdgeInsets.only(top: 10),
                           height: 180,
-                          width: MediaQuery.of(context).size.width,
                           child: ListView.builder(
                             itemCount: s.resultItemPerSource[i].values
                                 .first["posters"].length,

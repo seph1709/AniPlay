@@ -46,9 +46,10 @@ class FilmDetails extends StatelessWidget {
                                 blendMode: BlendMode.dstIn,
                                 child: Image.network(
                                   RuntimeController.selectedFilmData["poster"],
-                                  height: 300,
-                                  width: MediaQuery.of(context).size.width,
+                                  width: 400,
+                                  height: 350,
                                   fit: BoxFit.cover,
+                                  // scale: 0.6,
                                 ),
                               ),
                               Padding(

@@ -27,8 +27,7 @@ class LoadingFilmDetails extends StatelessWidget {
                 color: Get.isDarkMode
                     ? Themes.dark.primaryColor
                     : Themes.light.primaryColor,
-                height: 300,
-                width: MediaQuery.of(context).size.width,
+                height: 350,
               ),
               Padding(
                 padding: const EdgeInsets.all(15.0),
@@ -72,7 +71,6 @@ class LoadingFilmDetails extends StatelessWidget {
                             ? Themes.dark.primaryColor
                             : Themes.light.primaryColor,
                         height: 15,
-                        width: MediaQuery.of(context).size.width,
                       ),
                     ))
                       container,

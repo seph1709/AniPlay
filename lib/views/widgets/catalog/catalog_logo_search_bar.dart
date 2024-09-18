@@ -6,8 +6,21 @@ import 'package:aniplay/controllers/theme_controller.dart';
 import 'package:aniplay/controllers/search_controller.dart';
 import 'package:aniplay/controllers/catalog_controller.dart';
 
-class LogoAndSearchBar extends StatelessWidget {
+class LogoAndSearchBar extends StatefulWidget {
   const LogoAndSearchBar({super.key});
+
+  @override
+  State<LogoAndSearchBar> createState() => _LogoAndSearchBarState();
+}
+
+class _LogoAndSearchBarState extends State<LogoAndSearchBar> {
+  late TextEditingController textEditingController;
+
+  @override
+  void initState() {
+    textEditingController = TextEditingController();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +32,6 @@ class LogoAndSearchBar extends StatelessWidget {
               color: t.isDarkMode
                   ? Themes.dark.scaffoldBackgroundColor
                   : Themes.light.scaffoldBackgroundColor,
-              width: MediaQuery.of(context).size.width,
               child: Row(
                 children: [
                   Padding(
@@ -52,11 +64,13 @@ class LogoAndSearchBar extends StatelessWidget {
                             return TextField(
                               keyboardType: TextInputType.text,
                               textInputAction: TextInputAction.search,
-                              focusNode: s.focusNode,
-                              controller: s.textController,
-                              onEditingComplete: () {},
+                              controller: textEditingController,
+                              onTap: () {
+                                FocusManager.instance.primaryFocus
+                                    ?.requestFocus();
+                              },
                               onTapOutside: (event) {
-                                s.focusNode.unfocus();
+                                FocusManager.instance.primaryFocus?.unfocus();
                               },
                               onSubmitted: (value) {
                                 if (value.isNotEmpty) {
@@ -65,6 +79,8 @@ class LogoAndSearchBar extends StatelessWidget {
                                   Get.to(
                                       SearchView(
                                         searchVAlue: value,
+                                        textEditingController:
+                                            textEditingController,
                                       ),
                                       transition: Transition.downToUp);
                                 }

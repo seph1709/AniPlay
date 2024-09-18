@@ -48,8 +48,6 @@ class _LoadingVideoPlayerState extends State<LoadingVideoPlayer> {
       body: Center(
         child: Container(
           alignment: Alignment.center,
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.width,
           child: Padding(
             padding: const EdgeInsets.only(top: 50),
             child: IntrinsicHeight(

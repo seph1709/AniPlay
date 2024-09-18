@@ -2,7 +2,6 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:aniplay/themes/themes.dart';
 import 'package:aniplay/controllers/theme_controller.dart';
-
 import 'package:aniplay/controllers/catalog_controller.dart';
 import 'package:aniplay/controllers/runtime_data_controller.dart';
 
@@ -12,13 +11,11 @@ class NavigationBottom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
     return GetBuilder<ThemeController>(
         id: "theme",
         builder: (t) {
           return Container(
             padding: const EdgeInsets.symmetric(vertical: 10),
-            width: width,
             decoration: const BoxDecoration(
               border: Border(
                 top: BorderSide(
