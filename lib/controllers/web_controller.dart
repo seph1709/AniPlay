@@ -25,7 +25,6 @@ class WebController extends GetxController {
   }
 
   void gotToPlayer() {
-    log(RuntimeController.preventPlayer.toString());
     if (RuntimeController.preventPlayer == false) {
       Get.off(
           LandscapePlayer(
@@ -52,7 +51,7 @@ class WebController extends GetxController {
   }
 
   void onloadStart(controller, url) async {
-    log("load started ${url.toString()}");
+    log("load started: ${url.toString()}");
     await controller.clearFormData();
     await controller.clearHistory();
     await controller.clearSslPreferences();
@@ -171,11 +170,8 @@ class WebController extends GetxController {
     if (request.url.toString().contains(gotoHost) &&
         RuntimeController.gotoReq == false) {
       await inAppWebViewController.stopLoading();
-      log("going to");
+      log("going to: ${request.url}");
       RuntimeController.notice.value = " navigating...";
-      log(RuntimeController.progress.toString());
-      log(request.url.toString());
-
       RuntimeController.gotoReq = true;
       RuntimeController.stopLoading = true;
       await inAppWebViewController.loadUrl(

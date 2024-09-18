@@ -57,7 +57,7 @@ class RuntimeController extends GetxController {
   static void routingCallback(Routing? value) {
     if (value?.previous == "/FilmDetails") {
       RuntimeController.reset();
-      log("reseted");
+      log("----- reseted -----");
     }
   }
 }

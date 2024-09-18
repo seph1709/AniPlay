@@ -28,8 +28,8 @@ class LandscapePlayerState extends State<LandscapePlayer> {
   void initState() {
     super.initState();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
-    log(widget.vidUrl);
-    log(widget.headers.toString());
+    log("recieved url: ${widget.vidUrl}\n");
+    log("revieved headers: ${widget.headers}\n");
   }
 
   @override

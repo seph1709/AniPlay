@@ -41,9 +41,7 @@ class ElementHandler {
       final title = getTitleText(element,
           (updateCatalog || perTitleElement == null) ? null : perTitleElement);
 
-      // log(title);
       final detailsUrl = getMoreDetailsUrl(element);
-      log(detailsUrl);
       val["posters"]?.add(posterUrl);
       val["titles"]?.add(title);
       val["detailsUrls"]?.add(detailsUrl);
@@ -86,9 +84,7 @@ class ElementHandler {
     final titleAttribute = title.querySelector.attribute;
     final titleGetText = title.querySelector.getText;
     final titleElement = element.querySelector(titleSelector)!;
-    // log(titleElement.outerHtml);
-    // log(titleSelector);
-    // log(titleGetText.toString());
+
     var titleText = "null";
 
     if (titleAttribute != null) {
@@ -114,7 +110,7 @@ class ElementHandler {
     GetDescription description;
     final overrideData = originFavSource.search.overrideSelectorHomeData;
     if (overrideData != null && overrideData.getDescription != null) {
-      log("has overried description");
+      log("----- has overried description -----");
       description = overrideData.getDescription!;
     } else {
       description = getCurrentType().moreDetailsPerItem.getDescription;
@@ -139,12 +135,11 @@ class ElementHandler {
     final url = Uri.parse(rawUrl ?? "")
         .replace(scheme: "https", host: originFavSource.host)
         .toString();
-    log(url);
     dynamic result;
     try {
       result = await http.get(Uri.parse(url));
     } catch (e) {
-      log(e.toString());
+      log("error: $e");
     }
 
     if (result.statusCode == 200) {
@@ -154,10 +149,19 @@ class ElementHandler {
     }
   }
 
-  Future<List<String>> getEpisodesUrls([bool fromSearch = false]) async {
+  Future<List<String>> getEpisodesUrls(
+      [bool fromSearch = false, bool fromFav = false, int? favIndex]) async {
+    log("isfromfav: $fromFav");
+
+    if (fromFav && favIndex != null) {
+      return c.getFavoriteEpisodeUrls()[favIndex];
+    }
     var localDoc = document;
+
     if ((originFavSource.search.hasStreamPage && fromSearch) ||
-        (getCurrentType().streamPage != null && fromSearch == false)) {
+        (getCurrentType().streamPage != null &&
+            fromSearch == false &&
+            fromFav == false)) {
       localDoc = await getStreamPageDoc();
     }
 
@@ -180,7 +184,6 @@ class ElementHandler {
     if (episodes.reverse) {
       episodesUrls = episodesUrls.reversed.toList();
     }
-    log(episodesUrls.toString());
 
     return episodesUrls;
   }
@@ -188,7 +191,6 @@ class ElementHandler {
   getResultItem() {
     final SearchResultController c = Get.find();
     final items = getAllItemsElementForCatalog(false);
-    log(items.toString());
     c.resultItemPerSource.add(items);
   }
 }

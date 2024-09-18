@@ -1,3 +1,4 @@
+// ignore: unused_import
 import 'dart:developer';
 
 class Source {
@@ -93,7 +94,6 @@ class GetCurrentSeasonLinkItems {
   });
 
   factory GetCurrentSeasonLinkItems.fromJson(Map<String, dynamic> json) {
-    log(json.toString());
     return GetCurrentSeasonLinkItems._internal(
       querySelectorAll: QuerySelectorAll.fromJson(json["querySelectorAll"]),
       reverse: json["reverse"] ?? false,

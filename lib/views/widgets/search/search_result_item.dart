@@ -49,12 +49,6 @@ class ResultContainer extends StatelessWidget {
                                 return GestureDetector(
                                   onTapUp: (details) {
                                     final CatalogController c = Get.find();
-                                    log("tapped");
-                                    log(s.resultItemPerSource[i].values
-                                        .first["detailsUrls"][index]
-                                        .toString());
-
-                                    // final host =
 
                                     c.getFilmDetails(
                                         s.resultItemPerSource[i].values
@@ -67,7 +61,9 @@ class ResultContainer extends StatelessWidget {
                                         s.resultItemPerSource[i].values
                                             .first["host"][0],
                                         null,
-                                        true);
+                                        true,
+                                        false);
+
                                     Get.to(
                                         FilmDetails(
                                           title: s.resultItemPerSource[i].values

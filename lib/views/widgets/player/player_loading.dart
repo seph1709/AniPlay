@@ -1,3 +1,4 @@
+// ignore: unused_import
 import 'dart:developer';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +26,6 @@ class _LoadingVideoPlayerState extends State<LoadingVideoPlayer> {
 
   @override
   void dispose() async {
-    log(Get.previousRoute);
     if (Get.previousRoute == "/FilmDetails") {
       SystemChrome.setPreferredOrientations([
         DeviceOrientation.portraitUp,

@@ -19,7 +19,6 @@ class FilmDetails extends StatelessWidget {
     return GetBuilder<CatalogController>(
       id: "filmDetailsView",
       builder: (c) {
-        log(RuntimeController.selectedFilmData.toString());
         return RuntimeController.selectedFilmData.isNotEmpty
             ? MaterialApp(
                 home: Scaffold(
@@ -195,11 +194,11 @@ class FilmDetails extends StatelessWidget {
                           Align(
                             alignment: Alignment.topRight,
                             child: GestureDetector(
-                              onTapUp: (details) {
+                              onTapUp: (details) async {
                                 //
 
                                 if (!c.getFavoriteTItles().contains(title)) {
-                                  c.addToFavorite();
+                                  await c.addToFavorite();
                                   log("added");
                                 } else {
                                   final index = c

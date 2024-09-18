@@ -13,9 +13,8 @@ class ItemPoster extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<CatalogController>(builder: (c) {
       return GestureDetector(
-        onTapUp: (details) {
-          log("from gesture ${c.getOriginHostFromFavorite()[index]}");
-          c.getFilmDetails(
+        onTapUp: (details) async {
+          await c.getFilmDetails(
               c.getFavoritedetailsPageUrls()[index],
               null,
               c.getFavoriteTItles()[index],
@@ -23,9 +22,11 @@ class ItemPoster extends StatelessWidget {
               c.getOriginHostFromFavorite()[index],
               c.getTypeIndex()[index],
               false,
-              true);
+              true,
+              index);
 
-          // log("meee" + RuntimeController.selectedFilmData.toString());
+          log("origin host: ${c.getOriginHostFromFavorite()[index]}");
+
           Get.to(
               FilmDetails(
                 title: c.getFavoriteTItles()[index],

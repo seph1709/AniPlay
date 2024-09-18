@@ -1,4 +1,5 @@
 import 'dart:convert';
+// ignore: unused_import
 import 'dart:developer';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
@@ -14,7 +15,6 @@ class Request {
     if (response.statusCode == 200) {
       c.sources = jsonDecode(response.body);
       UserData.sources = c.sources;
-      log(RuntimeController.sourceBaseUrl);
       return Source.fromJson(
           jsonDecode(response.body)[UserData.selectedSource]);
     } else {
@@ -27,7 +27,6 @@ class Request {
     final url = Uri.parse(
             c.source.types.toList[UserData.selectedType].value["subdirectory"])
         .replace(scheme: "https", host: c.source.host);
-    log(url.toString());
     final response = await http.get(url);
     if (response.statusCode == 200) {
       return response.body;
@@ -39,7 +38,6 @@ class Request {
   static Future<String> getResponseBodyFilmDetails(
       String url, String originHost) async {
     final uri = Uri.parse(url).replace(scheme: "https", host: originHost);
-    log("getreponsebody");
 
     final response = await http.get(uri);
     if (response.statusCode == 200) {

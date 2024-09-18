@@ -97,11 +97,11 @@ class CatalogController extends GetxController {
       UserData.selectedSource = index;
       UserData.selectedType = 0;
       source = Source.fromJson(sources[index]);
-      log(source.host);
+      log("source host: ${source.host}");
       await getdataSources();
       await getTypeData();
     } catch (e) {
-      log(e.toString());
+      log("error: $e.");
     }
   }
 
@@ -110,7 +110,7 @@ class CatalogController extends GetxController {
     Get.find<WebController>().typeForPlayer = typeForPlayer;
   }
 
-  void addToFavorite() async {
+  Future<void> addToFavorite() async {
     UserData.addToFavoriteFromMap(RuntimeController.selectedFilmData);
     update(["favoriteGrid", "favoriteIcon"]);
     await saveAppData();
@@ -149,7 +149,7 @@ class CatalogController extends GetxController {
       currentType = source.types.current;
       selectAllItems = currentType.selectAllItems;
     } catch (e) {
-      log(e.toString());
+      log("error: $e.");
     }
   }
 
@@ -177,7 +177,7 @@ class CatalogController extends GetxController {
           originFavSource: source);
       handler.getAllItemsElementForCatalog();
     } catch (e) {
-      log(e.toString());
+      log("error: $e.");
     }
   }
 
@@ -222,12 +222,12 @@ class CatalogController extends GetxController {
     int? typeIndex,
     bool fromSearch = false,
     bool fromFav = false,
+    int? favIndex,
   ]) async {
     RuntimeController.selectedFilmData.clear();
-    log("origin $originHost");
+
     final originSourceFav =
         Source.fromJson(getSourceBaseFromHost(originHost ?? source.host));
-    log(originSourceFav.host.toString());
     initTypeForPlayer(originSourceFav);
     setSelectedFilmData(
         url,
@@ -238,7 +238,8 @@ class CatalogController extends GetxController {
         originHost,
         typeIndex,
         fromSearch,
-        fromFav);
+        fromFav,
+        favIndex);
   }
 
   void setSelectedFilmData(
@@ -250,13 +251,17 @@ class CatalogController extends GetxController {
       String? originHost,
       int? typeIndex,
       bool fromSearch,
-      bool fromFav) async {
+      bool fromFav,
+      int? favIndex) async {
     String body;
     ElementHandler handler;
     String title;
     String poster;
     String description;
     List<String> episodesUrlsList;
+
+    log("originHostFavHost: ${originSourceFav.host}");
+
     body = await Request.getResponseBodyFilmDetails(
         url, originHost ?? originSourceFav.host);
     handler = ElementHandler(
@@ -268,9 +273,9 @@ class CatalogController extends GetxController {
     poster =
         posterFromFavotire ?? RuntimeController.posters[indexFromCatalog ?? 0];
     description = handler.getDescription(fromSearch);
-    log(fromSearch.toString());
-    episodesUrlsList = await handler.getEpisodesUrls(fromSearch);
-    // log("zzzzzzzzzzzz  " + fromFav.toString() + fromSearch.toString());
+
+    episodesUrlsList =
+        await handler.getEpisodesUrls(fromSearch, fromFav, favIndex);
 
     setRuntimeSelectedData(
         url, title, poster, description, episodesUrlsList, originSourceFav);
