@@ -14,7 +14,7 @@ class Favorite extends StatelessWidget {
     return GetBuilder<CatalogController>(builder: (c) {
       return MaterialApp(
         home: Scaffold(
-          backgroundColor: RuntimeController.isDarkmode
+          backgroundColor: RuntimeController.isDarkMode
               ? Themes.dark.scaffoldBackgroundColor
               : Themes.light.scaffoldBackgroundColor,
           body: SafeArea(
@@ -46,7 +46,7 @@ class Favorite extends StatelessWidget {
                               ),
                             ),
                       Container(
-                        color: RuntimeController.isDarkmode
+                        color: RuntimeController.isDarkMode
                             ? Themes.dark.scaffoldBackgroundColor
                             : Themes.light.scaffoldBackgroundColor,
                         padding: const EdgeInsets.all(10),

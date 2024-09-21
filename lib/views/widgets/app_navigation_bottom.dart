@@ -51,7 +51,7 @@ class NavigationBottom extends StatelessWidget {
                                 style: TextStyle(
                                   color:
                                       RuntimeController.currentPage.value == 1
-                                          ? RuntimeController.isDarkmode
+                                          ? RuntimeController.isDarkMode
                                               ? Themes.dark.secondaryHeaderColor
                                               : Themes.light.highlightColor
                                           : const Color.fromARGB(
@@ -66,7 +66,7 @@ class NavigationBottom extends StatelessWidget {
                               Icon(
                                 Icons.movie_rounded,
                                 color: RuntimeController.currentPage.value == 1
-                                    ? RuntimeController.isDarkmode
+                                    ? RuntimeController.isDarkMode
                                         ? Themes.dark.secondaryHeaderColor
                                         : Themes.light.iconTheme.color
                                     : const Color.fromARGB(255, 140, 140, 140),
@@ -111,7 +111,7 @@ class NavigationBottom extends StatelessWidget {
                                 style: TextStyle(
                                   color:
                                       RuntimeController.currentPage.value == 2
-                                          ? RuntimeController.isDarkmode
+                                          ? RuntimeController.isDarkMode
                                               ? Themes.dark.secondaryHeaderColor
                                               : Themes.light.highlightColor
                                           : const Color.fromARGB(
@@ -126,7 +126,7 @@ class NavigationBottom extends StatelessWidget {
                               Icon(
                                 Icons.favorite_rounded,
                                 color: RuntimeController.currentPage.value == 2
-                                    ? RuntimeController.isDarkmode
+                                    ? RuntimeController.isDarkMode
                                         ? Themes.dark.secondaryHeaderColor
                                         : Themes.light.iconTheme.color
                                     : const Color.fromARGB(255, 140, 140, 140),
@@ -168,7 +168,7 @@ class NavigationBottom extends StatelessWidget {
                                 style: TextStyle(
                                   color:
                                       RuntimeController.currentPage.value == 3
-                                          ? RuntimeController.isDarkmode
+                                          ? RuntimeController.isDarkMode
                                               ? Themes.dark.secondaryHeaderColor
                                               : Themes.light.highlightColor
                                           : const Color.fromARGB(
@@ -183,7 +183,7 @@ class NavigationBottom extends StatelessWidget {
                               Icon(
                                 Icons.info_rounded,
                                 color: RuntimeController.currentPage.value == 3
-                                    ? RuntimeController.isDarkmode
+                                    ? RuntimeController.isDarkMode
                                         ? Themes.dark.secondaryHeaderColor
                                         : Themes.light.iconTheme.color
                                     : const Color.fromARGB(255, 140, 140, 140),

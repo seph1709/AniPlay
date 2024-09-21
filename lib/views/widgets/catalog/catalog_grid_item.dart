@@ -63,7 +63,7 @@ class GridCatalog extends StatelessWidget {
                       padding: const EdgeInsets.only(top: 5, right: 2, left: 2),
                       child: Text(
                         RuntimeController.titles[localindex],
-                        style: RuntimeController.isDarkmode
+                        style: RuntimeController.isDarkMode
                             ? Themes.dark.textTheme.titleSmall
                             : Themes.light.textTheme.titleSmall,
                         maxLines: 1,

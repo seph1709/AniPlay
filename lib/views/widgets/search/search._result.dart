@@ -14,7 +14,7 @@ class SearchResult extends StatelessWidget {
       return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(
-          backgroundColor: RuntimeController.isDarkmode
+          backgroundColor: RuntimeController.isDarkMode
               ? Themes.dark.scaffoldBackgroundColor
               : Themes.light.scaffoldBackgroundColor,
           body: SingleChildScrollView(

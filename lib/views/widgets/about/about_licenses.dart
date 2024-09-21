@@ -28,7 +28,7 @@ class PackagesLicenses extends StatelessWidget {
             Text(
               "AniPlay",
               style: TextStyle(
-                color: !RuntimeController.isDarkmode
+                color: !RuntimeController.isDarkMode
                     ? Themes.dark.primaryColor
                     : Themes.light.primaryColor,
                 fontSize: 17,
@@ -40,7 +40,7 @@ class PackagesLicenses extends StatelessWidget {
               child: Text(
                 "version 1.1.3",
                 style: TextStyle(
-                  color: !RuntimeController.isDarkmode
+                  color: !RuntimeController.isDarkMode
                       ? Themes.dark.primaryColor
                       : Themes.light.primaryColor,
                   fontSize: 11,
@@ -53,7 +53,7 @@ class PackagesLicenses extends StatelessWidget {
               child: Text(
                 "Anime streaming app that only scrapes content from the internet.",
                 style: TextStyle(
-                  color: !RuntimeController.isDarkmode
+                  color: !RuntimeController.isDarkMode
                       ? Themes.dark.primaryColor
                       : Themes.light.primaryColor,
                   fontSize: 14,
@@ -72,7 +72,7 @@ class PackagesLicenses extends StatelessWidget {
                 child: Icon(
                   Bootstrap.github,
                   size: 45,
-                  color: !RuntimeController.isDarkmode
+                  color: !RuntimeController.isDarkMode
                       ? Themes.dark.primaryColor
                       : Themes.light.primaryColor,
                 ),
@@ -85,7 +85,7 @@ class PackagesLicenses extends StatelessWidget {
               child: Text(
                 "Licenses",
                 style: TextStyle(
-                  color: !RuntimeController.isDarkmode
+                  color: !RuntimeController.isDarkMode
                       ? Themes.dark.primaryColor
                       : Themes.light.primaryColor,
                   fontSize: 14,
@@ -99,7 +99,7 @@ class PackagesLicenses extends StatelessWidget {
               child: Text(
                 "Packages/projects that makes this app possible.",
                 style: TextStyle(
-                  color: !RuntimeController.isDarkmode
+                  color: !RuntimeController.isDarkMode
                       ? Themes.dark.primaryColor
                       : Themes.light.primaryColor,
                   fontSize: 14,

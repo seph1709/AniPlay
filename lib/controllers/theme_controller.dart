@@ -11,13 +11,13 @@ class ThemeController extends GetxController {
   //
   late Box box;
   Future<void> changeTheme() async {
-    RuntimeController.isDarkmode = !RuntimeController.isDarkmode;
+    RuntimeController.isDarkMode = !RuntimeController.isDarkMode;
     Get.changeThemeMode(
-        RuntimeController.isDarkmode ? ThemeMode.light : ThemeMode.dark);
+        RuntimeController.isDarkMode ? ThemeMode.light : ThemeMode.dark);
     setSystemUIOverlay();
-    await box.put('isDarkMode', RuntimeController.isDarkmode);
+    await box.put('isDarkMode', RuntimeController.isDarkMode);
     await Get.forceAppUpdate();
-    log("isDarkMode: ${RuntimeController.isDarkmode}");
+    log("isDarkMode: ${RuntimeController.isDarkMode}");
   }
 
   Future<void> setTheme(ThemeMode themeMode) async {
@@ -30,7 +30,7 @@ class ThemeController extends GetxController {
     box = Hive.box("theme");
     setSystemUIOverlay();
     bool isDarkMode = box.get('isDarkMode') ?? false;
-    RuntimeController.isDarkmode = isDarkMode;
+    RuntimeController.isDarkMode = isDarkMode;
     await setTheme(isDarkMode ? ThemeMode.dark : ThemeMode.light);
 
     super.onInit();
@@ -41,7 +41,7 @@ class ThemeController extends GetxController {
         overlays: SystemUiOverlay.values);
     SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle(
-          systemNavigationBarColor: RuntimeController.isDarkmode
+          systemNavigationBarColor: RuntimeController.isDarkMode
               ? Themes.dark.primaryColor
               : Themes.light.primaryColor),
     );

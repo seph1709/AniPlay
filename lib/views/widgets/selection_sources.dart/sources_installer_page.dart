@@ -9,7 +9,7 @@ class SourcesInstallerPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: RuntimeController.isDarkmode
+        backgroundColor: RuntimeController.isDarkMode
             ? Themes.dark.scaffoldBackgroundColor
             : Themes.light.scaffoldBackgroundColor,
         body: const SafeArea(child: Row()),

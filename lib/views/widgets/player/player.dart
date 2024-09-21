@@ -97,7 +97,7 @@ class LandscapePlayerState extends State<LandscapePlayer> {
           ),
           videoLoadingStyle: VideoLoadingStyle(
             loadingText: "",
-            loadingBackgroundColor: RuntimeController.isDarkmode
+            loadingBackgroundColor: RuntimeController.isDarkMode
                 ? Themes.dark.primaryColor
                 : Themes.light.primaryColor,
             loadingIndicatorColor: Themes.dark.secondaryHeaderColor,

@@ -26,7 +26,7 @@ class _LogoAndSearchBarState extends State<LogoAndSearchBar> {
   Widget build(BuildContext context) {
     return GetBuilder<CatalogController>(builder: (c) {
       return Container(
-        color: RuntimeController.isDarkmode
+        color: RuntimeController.isDarkMode
             ? Themes.dark.scaffoldBackgroundColor
             : Themes.light.scaffoldBackgroundColor,
         child: Row(
@@ -50,7 +50,7 @@ class _LogoAndSearchBarState extends State<LogoAndSearchBar> {
                         const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
-                      color: RuntimeController.isDarkmode
+                      color: RuntimeController.isDarkMode
                           ? Themes.dark.unselectedWidgetColor
                           : Themes.light.unselectedWidgetColor,
                       borderRadius: BorderRadius.circular(10),
@@ -78,7 +78,7 @@ class _LogoAndSearchBarState extends State<LogoAndSearchBar> {
                         }
                       },
                       style: TextStyle(
-                          color: !RuntimeController.isDarkmode
+                          color: !RuntimeController.isDarkMode
                               ? Themes.dark.primaryColor
                               : Themes.light.primaryColor,
                           fontSize: 15,
@@ -86,7 +86,7 @@ class _LogoAndSearchBarState extends State<LogoAndSearchBar> {
                       decoration: InputDecoration.collapsed(
                         hintText: "Search anything...",
                         hintStyle: TextStyle(
-                          color: RuntimeController.isDarkmode
+                          color: RuntimeController.isDarkMode
                               ? Themes.dark.hintColor
                               : Themes.light.hintColor,
                         ),
@@ -112,7 +112,7 @@ class _LogoAndSearchBarState extends State<LogoAndSearchBar> {
               },
               child: Icon(
                 Icons.light_mode_rounded,
-                color: RuntimeController.isDarkmode
+                color: RuntimeController.isDarkMode
                     ? Themes.dark.hintColor
                     : Themes.light.highlightColor,
               ),

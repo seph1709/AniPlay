@@ -30,7 +30,7 @@ class _MyAppState extends State<MyApp> {
       return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(
-          backgroundColor: RuntimeController.isDarkmode
+          backgroundColor: RuntimeController.isDarkMode
               ? Themes.dark.scaffoldBackgroundColor
               : Themes.light.scaffoldBackgroundColor,
           bottomNavigationBar: NavigationBottom(

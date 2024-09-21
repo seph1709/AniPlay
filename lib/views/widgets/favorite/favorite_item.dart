@@ -49,7 +49,7 @@ class ItemPoster extends StatelessWidget {
                       errorBuilder: (context, error, stackTrace) => Stack(
                         children: [
                           Container(
-                              color: !RuntimeController.isDarkmode
+                              color: !RuntimeController.isDarkMode
                                   ? Themes.dark.primaryColor
                                   : const Color.fromARGB(255, 16, 16, 16)),
                           Center(
@@ -82,7 +82,7 @@ class ItemPoster extends StatelessWidget {
                     c.getFavoriteTItles()[index],
                     style: TextStyle(
                       fontSize: 11.5,
-                      color: !RuntimeController.isDarkmode
+                      color: !RuntimeController.isDarkMode
                           ? Themes.dark.primaryColor
                           : Themes.light.primaryColor,
                       fontWeight: FontWeight.bold,

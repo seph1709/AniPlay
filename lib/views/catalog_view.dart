@@ -18,7 +18,7 @@ class CatalogView extends StatelessWidget {
       darkTheme: Themes.dark,
       themeMode: RuntimeController.themeMode(),
       home: Scaffold(
-        backgroundColor: RuntimeController.isDarkmode
+        backgroundColor: RuntimeController.isDarkMode
             ? Themes.dark.scaffoldBackgroundColor
             : Themes.light.scaffoldBackgroundColor,
         body: SafeArea(

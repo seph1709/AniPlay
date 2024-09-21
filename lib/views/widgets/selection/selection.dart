@@ -29,7 +29,7 @@ class SelectionCataglog extends StatelessWidget {
                   },
                   child: Icon(
                     Icons.arrow_left_rounded,
-                    color: RuntimeController.isDarkmode
+                    color: RuntimeController.isDarkMode
                         ? Themes.dark.iconTheme.color
                         : Themes.light.highlightColor,
                     size: 70,
@@ -38,7 +38,7 @@ class SelectionCataglog extends StatelessWidget {
                 Text(
                   from,
                   style: TextStyle(
-                      color: !RuntimeController.isDarkmode
+                      color: !RuntimeController.isDarkMode
                           ? Themes.dark.primaryColor
                           : Themes.light.primaryColor,
                       fontSize: 25),
@@ -57,7 +57,7 @@ class SelectionCataglog extends StatelessWidget {
                     Text(
                       "add",
                       style: TextStyle(
-                          color: !RuntimeController.isDarkmode
+                          color: !RuntimeController.isDarkMode
                               ? Themes.dark.primaryColor
                               : Themes.light.primaryColor,
                           fontSize: 18),
@@ -65,7 +65,7 @@ class SelectionCataglog extends StatelessWidget {
                     Icon(
                       Icons.add_rounded,
                       size: 30,
-                      color: RuntimeController.isDarkmode
+                      color: RuntimeController.isDarkMode
                           ? Themes.dark.iconTheme.color
                           : Themes.light.highlightColor,
                     ),
@@ -104,7 +104,7 @@ class SelectionCataglog extends StatelessWidget {
               children: [
                 Text(
                   baseName,
-                  style: RuntimeController.isDarkmode
+                  style: RuntimeController.isDarkMode
                       ? Themes.dark.textTheme.titleMedium
                       : Themes.light.textTheme.titleMedium,
                 ),
@@ -115,7 +115,7 @@ class SelectionCataglog extends StatelessWidget {
                   Icon(
                     Icons.arrow_left_rounded,
                     size: 50,
-                    color: RuntimeController.isDarkmode
+                    color: RuntimeController.isDarkMode
                         ? Themes.dark.iconTheme.color
                         : Themes.light.iconTheme.color,
                   ),
@@ -127,7 +127,7 @@ class SelectionCataglog extends StatelessWidget {
     }
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: RuntimeController.isDarkmode
+        backgroundColor: RuntimeController.isDarkMode
             ? Themes.dark.scaffoldBackgroundColor
             : Themes.light.scaffoldBackgroundColor,
         body: SafeArea(

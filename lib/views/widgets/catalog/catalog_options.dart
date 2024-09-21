@@ -15,7 +15,7 @@ class Options extends StatelessWidget {
         id: "options",
         builder: (c) {
           return Container(
-            color: RuntimeController.isDarkmode
+            color: RuntimeController.isDarkMode
                 ? Themes.dark.scaffoldBackgroundColor
                 : Themes.light.scaffoldBackgroundColor,
             child: Row(
@@ -35,13 +35,13 @@ class Options extends StatelessWidget {
                         Icon(
                           Icons.arrow_drop_down_rounded,
                           size: 45,
-                          color: RuntimeController.isDarkmode
+                          color: RuntimeController.isDarkMode
                               ? Themes.dark.iconTheme.color
                               : Themes.light.iconTheme.color,
                         ),
                         Text(
                           c.source.name,
-                          style: RuntimeController.isDarkmode
+                          style: RuntimeController.isDarkMode
                               ? Themes.dark.textTheme.titleMedium
                               : Themes.light.textTheme.titleMedium,
                         )
@@ -61,7 +61,7 @@ class Options extends StatelessWidget {
                         Icon(
                           Icons.arrow_drop_down_rounded,
                           size: 45,
-                          color: RuntimeController.isDarkmode
+                          color: RuntimeController.isDarkMode
                               ? Themes.dark.iconTheme.color
                               : Themes.light.iconTheme.color,
                         ),
@@ -69,7 +69,7 @@ class Options extends StatelessWidget {
                           padding: const EdgeInsets.only(right: 10),
                           child: Text(
                             c.source.types.toList[UserData.selectedType].key,
-                            style: RuntimeController.isDarkmode
+                            style: RuntimeController.isDarkMode
                                 ? Themes.dark.textTheme.titleMedium
                                 : Themes.light.textTheme.titleMedium,
                           ),

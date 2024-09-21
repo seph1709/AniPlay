@@ -22,7 +22,7 @@ class FilmDetails extends StatelessWidget {
         return RuntimeController.selectedFilmData.isNotEmpty
             ? MaterialApp(
                 home: Scaffold(
-                  backgroundColor: RuntimeController.isDarkmode
+                  backgroundColor: RuntimeController.isDarkMode
                       ? Themes.dark.scaffoldBackgroundColor
                       : Themes.light.scaffoldBackgroundColor,
                   body: SafeArea(
@@ -63,7 +63,7 @@ class FilmDetails extends StatelessWidget {
                                       child: Text(
                                         RuntimeController
                                             .selectedFilmData["title"],
-                                        style: RuntimeController.isDarkmode
+                                        style: RuntimeController.isDarkMode
                                             ? Themes.dark.textTheme.titleLarge
                                             : Themes.light.textTheme.titleLarge,
                                       ),
@@ -82,7 +82,7 @@ class FilmDetails extends StatelessWidget {
                                             : RuntimeController
                                                     .selectedFilmData[
                                                 "description"],
-                                        style: RuntimeController.isDarkmode
+                                        style: RuntimeController.isDarkMode
                                             ? Themes.dark.textTheme.bodySmall
                                             : Themes.light.textTheme.bodySmall,
                                         overflow: TextOverflow.ellipsis,
@@ -105,7 +105,7 @@ class FilmDetails extends StatelessWidget {
                                         minThumbLength: 50,
                                         controller: c.scrollController,
                                         thumbColor: !RuntimeController
-                                                .isDarkmode
+                                                .isDarkMode
                                             ? Themes.dark.secondaryHeaderColor
                                             : Themes.light.primaryColor,
                                         thumbVisibility: true,
@@ -118,7 +118,7 @@ class FilmDetails extends StatelessWidget {
                                             side: BorderSide(
                                                 color:
                                                     !RuntimeController
-                                                            .isDarkmode
+                                                            .isDarkMode
                                                         ? Themes.dark
                                                             .secondaryHeaderColor
                                                         : Themes
@@ -160,7 +160,7 @@ class FilmDetails extends StatelessWidget {
                                                 alignment: Alignment.center,
                                                 decoration: BoxDecoration(
                                                     color: RuntimeController
-                                                            .isDarkmode
+                                                            .isDarkMode
                                                         ? Themes.dark
                                                             .unselectedWidgetColor
                                                         : Themes.light
@@ -172,7 +172,7 @@ class FilmDetails extends StatelessWidget {
                                                   (index + 1).toString(),
                                                   style: TextStyle(
                                                       color: RuntimeController
-                                                              .isDarkmode
+                                                              .isDarkMode
                                                           ? Themes
                                                               .dark.hintColor
                                                           : Themes

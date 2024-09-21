@@ -34,7 +34,7 @@ class _SearchViewState extends State<SearchView> {
     return GetBuilder<CatalogController>(builder: (c) {
       return MaterialApp(
         home: Scaffold(
-          backgroundColor: RuntimeController.isDarkmode
+          backgroundColor: RuntimeController.isDarkMode
               ? Themes.dark.scaffoldBackgroundColor
               : Themes.light.scaffoldBackgroundColor,
           body: SafeArea(
@@ -73,7 +73,7 @@ class _SearchViewState extends State<SearchView> {
                                 horizontal: 15, vertical: 5),
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
-                              color: RuntimeController.isDarkmode
+                              color: RuntimeController.isDarkMode
                                   ? Themes.dark.unselectedWidgetColor
                                   : Themes.light.unselectedWidgetColor,
                               borderRadius: BorderRadius.circular(10),
@@ -90,7 +90,7 @@ class _SearchViewState extends State<SearchView> {
                                 }
                               },
                               style: TextStyle(
-                                  color: !RuntimeController.isDarkmode
+                                  color: !RuntimeController.isDarkMode
                                       ? Themes.dark.primaryColor
                                       : Themes.light.primaryColor,
                                   fontSize: 15,
@@ -98,7 +98,7 @@ class _SearchViewState extends State<SearchView> {
                               decoration: InputDecoration.collapsed(
                                 hintText: "Search anything...",
                                 hintStyle: TextStyle(
-                                  color: RuntimeController.isDarkmode
+                                  color: RuntimeController.isDarkMode
                                       ? Themes.dark.hintColor
                                       : Themes.dark.hintColor,
                                 ),
