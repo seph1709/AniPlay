@@ -45,6 +45,9 @@ class _LoadingVideoPlayerState extends State<LoadingVideoPlayer> {
 
     RuntimeController.progress.value = 0;
     return Scaffold(
+      backgroundColor: RuntimeController.isDarkMode
+          ? Themes.dark.primaryColor
+          : Themes.light.primaryColor,
       body: Center(
         child: Container(
           alignment: Alignment.center,
