@@ -1,5 +1,4 @@
 import 'dart:developer';
-import 'package:aniplay/controllers/runtime_data_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:aniplay/themes/themes.dart';

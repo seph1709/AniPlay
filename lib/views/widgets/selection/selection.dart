@@ -46,36 +46,36 @@ class SelectionCataglog extends StatelessWidget {
               ],
             ),
           ),
-          if (from == "sources")
-            GestureDetector(
-              onTapUp: (details) {
-                Get.to(const SourcesInstallerPage());
-              },
-              child: IntrinsicWidth(
-                child: Row(
-                  children: [
-                    Text(
-                      "add",
-                      style: TextStyle(
-                          color: !RuntimeController.isDarkMode
-                              ? Themes.dark.primaryColor
-                              : Themes.light.primaryColor,
-                          fontSize: 18),
-                    ),
-                    Icon(
-                      Icons.add_rounded,
-                      size: 30,
-                      color: RuntimeController.isDarkMode
-                          ? Themes.dark.iconTheme.color
-                          : Themes.light.highlightColor,
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    )
-                  ],
-                ),
-              ),
-            )
+          // if (from == "sources")
+          //   GestureDetector(
+          //     onTapUp: (details) {
+          //       Get.to(const SourcesInstallerPage());
+          //     },
+          //     child: IntrinsicWidth(
+          //       child: Row(
+          //         children: [
+          //           Text(
+          //             "add",
+          //             style: TextStyle(
+          //                 color: !RuntimeController.isDarkMode
+          //                     ? Themes.dark.primaryColor
+          //                     : Themes.light.primaryColor,
+          //                 fontSize: 18),
+          //           ),
+          //           Icon(
+          //             Icons.add_rounded,
+          //             size: 30,
+          //             color: RuntimeController.isDarkMode
+          //                 ? Themes.dark.iconTheme.color
+          //                 : Themes.light.highlightColor,
+          //           ),
+          //           const SizedBox(
+          //             width: 10,
+          //           )
+          //         ],
+          //       ),
+          //     ),
+          //   )
         ],
       ),
     ];
