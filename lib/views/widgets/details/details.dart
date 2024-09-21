@@ -22,7 +22,7 @@ class FilmDetails extends StatelessWidget {
         return RuntimeController.selectedFilmData.isNotEmpty
             ? MaterialApp(
                 home: Scaffold(
-                  backgroundColor: Get.isDarkMode
+                  backgroundColor: RuntimeController.isDarkmode
                       ? Themes.dark.scaffoldBackgroundColor
                       : Themes.light.scaffoldBackgroundColor,
                   body: SafeArea(
@@ -63,7 +63,7 @@ class FilmDetails extends StatelessWidget {
                                       child: Text(
                                         RuntimeController
                                             .selectedFilmData["title"],
-                                        style: Get.isDarkMode
+                                        style: RuntimeController.isDarkmode
                                             ? Themes.dark.textTheme.titleLarge
                                             : Themes.light.textTheme.titleLarge,
                                       ),
@@ -82,7 +82,7 @@ class FilmDetails extends StatelessWidget {
                                             : RuntimeController
                                                     .selectedFilmData[
                                                 "description"],
-                                        style: Get.isDarkMode
+                                        style: RuntimeController.isDarkmode
                                             ? Themes.dark.textTheme.bodySmall
                                             : Themes.light.textTheme.bodySmall,
                                         overflow: TextOverflow.ellipsis,
@@ -104,7 +104,8 @@ class FilmDetails extends StatelessWidget {
                                         minOverscrollLength: 50,
                                         minThumbLength: 50,
                                         controller: c.scrollController,
-                                        thumbColor: !Get.isDarkMode
+                                        thumbColor: !RuntimeController
+                                                .isDarkmode
                                             ? Themes.dark.secondaryHeaderColor
                                             : Themes.light.primaryColor,
                                         thumbVisibility: true,
@@ -115,10 +116,13 @@ class FilmDetails extends StatelessWidget {
                                         // minThumbLength: 50,
                                         shape: StadiumBorder(
                                             side: BorderSide(
-                                                color: !Get.isDarkMode
-                                                    ? Themes.dark
-                                                        .secondaryHeaderColor
-                                                    : Themes.light.primaryColor,
+                                                color:
+                                                    !RuntimeController
+                                                            .isDarkmode
+                                                        ? Themes.dark
+                                                            .secondaryHeaderColor
+                                                        : Themes
+                                                            .light.primaryColor,
                                                 width: 4.0)),
                                         child: GridView.builder(
                                           controller: c.scrollController,
@@ -155,7 +159,8 @@ class FilmDetails extends StatelessWidget {
                                               child: Container(
                                                 alignment: Alignment.center,
                                                 decoration: BoxDecoration(
-                                                    color: Get.isDarkMode
+                                                    color: RuntimeController
+                                                            .isDarkmode
                                                         ? Themes.dark
                                                             .unselectedWidgetColor
                                                         : Themes.light
@@ -166,7 +171,8 @@ class FilmDetails extends StatelessWidget {
                                                 child: Text(
                                                   (index + 1).toString(),
                                                   style: TextStyle(
-                                                      color: Get.isDarkMode
+                                                      color: RuntimeController
+                                                              .isDarkmode
                                                           ? Themes
                                                               .dark.hintColor
                                                           : Themes

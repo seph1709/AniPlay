@@ -30,6 +30,7 @@ class RuntimeController extends GetxController {
   static String title = "";
   static int epi = 1;
   static bool preventPlayer = false;
+  static bool isDarkmode = false;
 
   static void reset() {
     progress.value = 0;
@@ -48,11 +49,8 @@ class RuntimeController extends GetxController {
   }
 
   static ThemeMode themeMode() {
-    return Hive.box("theme").get("isDarkMode") != null
-        ? Hive.box("theme").get("isDarkMode")
-            ? ThemeMode.dark
-            : ThemeMode.light
-        : ThemeMode.light;
+    isDarkmode = Hive.box("theme").get("isDarkMode") ?? false;
+    return isDarkmode ? ThemeMode.dark : ThemeMode.light;
   }
 
   static void routingCallback(Routing? value) {
@@ -60,5 +58,7 @@ class RuntimeController extends GetxController {
       RuntimeController.reset();
       log("----- reseted -----");
     }
+
+    log("callback");
   }
 }

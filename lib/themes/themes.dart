@@ -32,7 +32,7 @@ class Themes {
     hintColor: Colors.grey,
     textTheme: const TextTheme(
       bodySmall: TextStyle(fontSize: 13, color: Colors.white),
-      titleMedium: TextStyle(fontSize: 17, color: Colors.white),
+      titleMedium: TextStyle(fontSize: 16, color: Colors.white),
       titleLarge: TextStyle(
           fontSize: 19, fontWeight: FontWeight.bold, color: Colors.white),
       titleSmall: TextStyle(

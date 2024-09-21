@@ -26,7 +26,7 @@ class ResultContainer extends StatelessWidget {
                     child: Text(
                       RuntimeController.resultItemPerSource[i].keys.first,
                       style: TextStyle(
-                          color: !Get.isDarkMode
+                          color: !RuntimeController.isDarkmode
                               ? Themes.dark.primaryColor
                               : Themes.light.primaryColor,
                           fontSize: 19),
@@ -133,7 +133,7 @@ class ResultContainer extends StatelessWidget {
                                                   .values
                                                   .first["titles"][index]
                                               : "",
-                                          style: Get.isDarkMode
+                                          style: RuntimeController.isDarkmode
                                               ? Themes.dark.textTheme.titleSmall
                                               : Themes
                                                   .light.textTheme.titleSmall,

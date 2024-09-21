@@ -1,7 +1,6 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:aniplay/themes/themes.dart';
-import 'package:aniplay/controllers/theme_controller.dart';
 import 'package:aniplay/controllers/runtime_data_controller.dart';
 import 'package:aniplay/views/widgets/catalog/catalog_options.dart';
 import 'package:aniplay/views/widgets/catalog/catalog_grid_item.dart';
@@ -13,35 +12,34 @@ class CatalogView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<ThemeController>(
-        id: "theme",
-        builder: (t) {
-          return MaterialApp(
-            debugShowCheckedModeBanner: false,
-            home: Scaffold(
-              backgroundColor: t.isDarkMode
-                  ? Themes.dark.scaffoldBackgroundColor
-                  : Themes.light.scaffoldBackgroundColor,
-              body: SafeArea(
-                child: Stack(
-                  children: [
-                    Obx(
-                      () {
-                        return RuntimeController.itemLoaded.value
-                            ? const GridCatalog()
-                            : const LoadingItems();
-                      },
-                    ),
-                    const IntrinsicHeight(
-                      child: Column(
-                        children: [LogoAndSearchBar(), Options()],
-                      ),
-                    ),
-                  ],
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: Themes.light,
+      darkTheme: Themes.dark,
+      themeMode: RuntimeController.themeMode(),
+      home: Scaffold(
+        backgroundColor: RuntimeController.isDarkmode
+            ? Themes.dark.scaffoldBackgroundColor
+            : Themes.light.scaffoldBackgroundColor,
+        body: SafeArea(
+          child: Stack(
+            children: [
+              Obx(
+                () {
+                  return RuntimeController.itemLoaded.value
+                      ? const GridCatalog()
+                      : const LoadingItems();
+                },
+              ),
+              const IntrinsicHeight(
+                child: Column(
+                  children: [LogoAndSearchBar(), Options()],
                 ),
               ),
-            ),
-          );
-        });
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

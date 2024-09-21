@@ -1,3 +1,6 @@
+import 'dart:developer';
+
+import 'package:aniplay/controllers/runtime_data_controller.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:flutter/services.dart';
@@ -7,31 +10,40 @@ import 'package:aniplay/themes/themes.dart';
 class ThemeController extends GetxController {
   //
   late Box box;
-  var isDarkMode = false;
   Future<void> changeTheme() async {
-    Get.changeThemeMode(isDarkMode ? ThemeMode.light : ThemeMode.dark);
-    isDarkMode = !isDarkMode;
-    await box.put('isDarkMode', isDarkMode);
+    RuntimeController.isDarkmode = !RuntimeController.isDarkmode;
+    Get.changeThemeMode(
+        RuntimeController.isDarkmode ? ThemeMode.light : ThemeMode.dark);
     setSystemUIOverlay();
-    update(["theme"]);
+    await box.put('isDarkMode', RuntimeController.isDarkmode);
+    await Get.forceAppUpdate();
+    log("isDarkMode: ${RuntimeController.isDarkmode}");
+  }
+
+  Future<void> setTheme(ThemeMode themeMode) async {
+    Get.changeThemeMode(themeMode);
+    await Get.forceAppUpdate();
   }
 
   @override
   void onInit() async {
     box = Hive.box("theme");
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
-        overlays: SystemUiOverlay.values);
     setSystemUIOverlay();
+    bool isDarkMode = box.get('isDarkMode') ?? false;
+    RuntimeController.isDarkmode = isDarkMode;
+    await setTheme(isDarkMode ? ThemeMode.dark : ThemeMode.light);
 
-    if (box.get('isDarkMode') != null) {
-      isDarkMode = box.get('isDarkMode');
-    }
     super.onInit();
   }
 
   void setSystemUIOverlay() {
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-        systemNavigationBarColor:
-            isDarkMode ? Themes.dark.primaryColor : Themes.light.primaryColor));
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+        overlays: SystemUiOverlay.values);
+    SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(
+          systemNavigationBarColor: RuntimeController.isDarkmode
+              ? Themes.dark.primaryColor
+              : Themes.light.primaryColor),
+    );
   }
 }

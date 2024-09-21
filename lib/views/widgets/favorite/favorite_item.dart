@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'package:aniplay/controllers/runtime_data_controller.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:aniplay/themes/themes.dart';
@@ -48,7 +49,7 @@ class ItemPoster extends StatelessWidget {
                       errorBuilder: (context, error, stackTrace) => Stack(
                         children: [
                           Container(
-                              color: !Get.isDarkMode
+                              color: !RuntimeController.isDarkmode
                                   ? Themes.dark.primaryColor
                                   : const Color.fromARGB(255, 16, 16, 16)),
                           Center(
@@ -81,7 +82,7 @@ class ItemPoster extends StatelessWidget {
                     c.getFavoriteTItles()[index],
                     style: TextStyle(
                       fontSize: 11.5,
-                      color: !Get.isDarkMode
+                      color: !RuntimeController.isDarkmode
                           ? Themes.dark.primaryColor
                           : Themes.light.primaryColor,
                       fontWeight: FontWeight.bold,

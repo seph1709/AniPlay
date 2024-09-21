@@ -1,8 +1,8 @@
 import 'dart:developer';
+import 'package:aniplay/controllers/runtime_data_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:aniplay/themes/themes.dart';
-import 'package:get/get.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:video_player/video_player.dart';
 import 'package:lecle_yoyo_player/lecle_yoyo_player.dart';
@@ -97,7 +97,7 @@ class LandscapePlayerState extends State<LandscapePlayer> {
           ),
           videoLoadingStyle: VideoLoadingStyle(
             loadingText: "",
-            loadingBackgroundColor: Get.isDarkMode
+            loadingBackgroundColor: RuntimeController.isDarkmode
                 ? Themes.dark.primaryColor
                 : Themes.light.primaryColor,
             loadingIndicatorColor: Themes.dark.secondaryHeaderColor,

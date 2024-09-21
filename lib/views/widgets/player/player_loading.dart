@@ -56,7 +56,7 @@ class _LoadingVideoPlayerState extends State<LoadingVideoPlayer> {
                   children: [
                     if (!RuntimeController.allowReload.value)
                       LoadingAnimationWidget.hexagonDots(
-                          color: !Get.isDarkMode
+                          color: !RuntimeController.isDarkmode
                               ? Themes.dark.highlightColor
                               : Themes.light.primaryColor,
                           size: 80),
@@ -69,7 +69,7 @@ class _LoadingVideoPlayerState extends State<LoadingVideoPlayer> {
                         () => Text(
                           "${RuntimeController.progress.value} %",
                           style: TextStyle(
-                              color: !Get.isDarkMode
+                              color: !RuntimeController.isDarkmode
                                   ? Themes.dark.highlightColor
                                   : Themes.light.primaryColor,
                               fontSize: 15,
@@ -101,13 +101,13 @@ class _LoadingVideoPlayerState extends State<LoadingVideoPlayer> {
                               margin: const EdgeInsets.only(bottom: 50),
                               padding: const EdgeInsets.symmetric(
                                   horizontal: 8, vertical: 4),
-                              color: !Get.isDarkMode
+                              color: !RuntimeController.isDarkmode
                                   ? Themes.dark.highlightColor
                                   : Themes.light.primaryColor,
                               child: Text(
                                 "reload",
                                 style: TextStyle(
-                                    color: Get.isDarkMode
+                                    color: RuntimeController.isDarkmode
                                         ? Themes.dark.highlightColor
                                         : Themes.light.primaryColor,
                                     fontSize: 18,
@@ -122,7 +122,7 @@ class _LoadingVideoPlayerState extends State<LoadingVideoPlayer> {
                       () => Text(
                         RuntimeController.notice.value,
                         style: TextStyle(
-                            color: !Get.isDarkMode
+                            color: !RuntimeController.isDarkmode
                                 ? Themes.dark.highlightColor
                                 : Themes.light.primaryColor,
                             fontSize: 15,

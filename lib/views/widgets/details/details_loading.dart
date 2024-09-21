@@ -1,4 +1,4 @@
-import 'package:get/get.dart';
+import 'package:aniplay/controllers/runtime_data_controller.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:flutter/material.dart';
 import 'package:aniplay/themes/themes.dart';
@@ -9,22 +9,23 @@ class LoadingFilmDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:
-          Get.isDarkMode ? Themes.dark.primaryColor : Themes.light.primaryColor,
+      backgroundColor: RuntimeController.isDarkmode
+          ? Themes.dark.primaryColor
+          : Themes.light.primaryColor,
       body: SingleChildScrollView(
         child: Shimmer.fromColors(
           direction: ShimmerDirection.ttb,
-          baseColor: Get.isDarkMode
+          baseColor: RuntimeController.isDarkmode
               ? Themes.dark.unselectedWidgetColor
               : Themes.light.unselectedWidgetColor,
-          highlightColor: Get.isDarkMode
+          highlightColor: RuntimeController.isDarkmode
               ? Themes.dark.hintColor
               : Themes.light.primaryColor,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                color: Get.isDarkMode
+                color: RuntimeController.isDarkmode
                     ? Themes.dark.primaryColor
                     : Themes.light.primaryColor,
                 height: 350,
@@ -36,7 +37,7 @@ class LoadingFilmDetails extends StatelessWidget {
                   children: [
                     Container(
                       margin: const EdgeInsets.only(bottom: 15),
-                      color: Get.isDarkMode
+                      color: RuntimeController.isDarkmode
                           ? Themes.dark.primaryColor
                           : Themes.light.primaryColor,
                       height: 40,
@@ -46,7 +47,7 @@ class LoadingFilmDetails extends StatelessWidget {
                       child: Row(
                         children: [
                           Container(
-                            color: Get.isDarkMode
+                            color: RuntimeController.isDarkmode
                                 ? Themes.dark.primaryColor
                                 : Themes.light.primaryColor,
                             height: 20,
@@ -54,7 +55,7 @@ class LoadingFilmDetails extends StatelessWidget {
                           ),
                           Container(
                             margin: const EdgeInsets.only(left: 10),
-                            color: Get.isDarkMode
+                            color: RuntimeController.isDarkmode
                                 ? Themes.dark.primaryColor
                                 : Themes.light.primaryColor,
                             height: 20,
@@ -67,7 +68,7 @@ class LoadingFilmDetails extends StatelessWidget {
                       10,
                       (index) => Container(
                         margin: const EdgeInsets.only(top: 15),
-                        color: Get.isDarkMode
+                        color: RuntimeController.isDarkmode
                             ? Themes.dark.primaryColor
                             : Themes.light.primaryColor,
                         height: 15,
