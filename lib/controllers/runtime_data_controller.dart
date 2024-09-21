@@ -16,20 +16,20 @@ class RuntimeController extends GetxController {
   static var favoriteData = {};
   static var gotoReq = false;
   static var allowVidPlayer = true;
-  static List<String> posters = [];
-  static List<String> titles = [];
-  static List<String> moreDetailsUrls = [];
-  static Map selectedFilmData = {};
   static var stopLoading = false;
   static var notice = "".obs;
   static var mainVidPageUrl = "";
   static var allowReload = false.obs;
   static var secondaryColor = const Color.fromARGB(255, 255, 17, 0);
   static var secondaryColorFade = const Color.fromARGB(255, 255, 90, 79);
+  static var resultItemPerSource = [].obs;
+  static List<String> posters = [];
+  static List<String> titles = [];
+  static List<String> moreDetailsUrls = [];
+  static Map selectedFilmData = {};
   static String title = "";
   static int epi = 1;
   static bool preventPlayer = false;
-  static var resultItemPerSource = [].obs;
 
   static void reset() {
     progress.value = 0;
