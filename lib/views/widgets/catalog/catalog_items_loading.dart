@@ -38,10 +38,10 @@ class LoadingItems extends StatelessWidget {
                     child: Text(
                       "",
                       style: TextStyle(
-                          fontSize: 11.5,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: "Quicksand"),
+                        fontSize: 11.5,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
                       maxLines: 1,
                       textAlign: TextAlign.center,
                     ),

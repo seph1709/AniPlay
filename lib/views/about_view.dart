@@ -50,11 +50,11 @@ class About extends StatelessWidget {
                                 child: Text(
                                   "About",
                                   style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 18,
-                                      letterSpacing: .5,
-                                      fontWeight: FontWeight.bold,
-                                      fontFamily: "QuicksandBold"),
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                    letterSpacing: .5,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                   textAlign: TextAlign.center,
                                 ),
                               ),

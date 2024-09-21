@@ -80,12 +80,12 @@ class ItemPoster extends StatelessWidget {
                   child: Text(
                     c.getFavoriteTItles()[index],
                     style: TextStyle(
-                        fontSize: 11.5,
-                        color: !Get.isDarkMode
-                            ? Themes.dark.primaryColor
-                            : Themes.light.primaryColor,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: "Quicksand"),
+                      fontSize: 11.5,
+                      color: !Get.isDarkMode
+                          ? Themes.dark.primaryColor
+                          : Themes.light.primaryColor,
+                      fontWeight: FontWeight.bold,
+                    ),
                     maxLines: 1,
                     textAlign: TextAlign.center,
                   ),

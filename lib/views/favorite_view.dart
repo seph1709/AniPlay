@@ -80,11 +80,11 @@ class Favorite extends StatelessWidget {
                                         child: Text(
                                           "My Favorites",
                                           style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 18,
-                                              letterSpacing: .5,
-                                              fontWeight: FontWeight.bold,
-                                              fontFamily: "QuicksandBold"),
+                                            color: Colors.white,
+                                            fontSize: 18,
+                                            letterSpacing: .5,
+                                            fontWeight: FontWeight.bold,
+                                          ),
                                           textAlign: TextAlign.center,
                                         ),
                                       ),

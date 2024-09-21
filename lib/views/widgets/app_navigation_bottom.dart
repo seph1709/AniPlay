@@ -53,18 +53,18 @@ class NavigationBottom extends StatelessWidget {
                                     Text(
                                       "Catalog",
                                       style: TextStyle(
-                                          color: RuntimeController
-                                                      .currentPage.value ==
-                                                  1
-                                              ? t.isDarkMode
-                                                  ? Themes
-                                                      .dark.secondaryHeaderColor
-                                                  : Themes.light.highlightColor
-                                              : const Color.fromARGB(
-                                                  255, 140, 140, 140),
-                                          fontSize: 16,
-                                          letterSpacing: 1,
-                                          fontFamily: "QuicksandBold"),
+                                        color: RuntimeController
+                                                    .currentPage.value ==
+                                                1
+                                            ? t.isDarkMode
+                                                ? Themes
+                                                    .dark.secondaryHeaderColor
+                                                : Themes.light.highlightColor
+                                            : const Color.fromARGB(
+                                                255, 140, 140, 140),
+                                        fontSize: 16,
+                                        letterSpacing: 1,
+                                      ),
                                     ),
                                     const SizedBox(
                                       width: 10,
@@ -118,18 +118,18 @@ class NavigationBottom extends StatelessWidget {
                                     Text(
                                       "Favorite",
                                       style: TextStyle(
-                                          color: RuntimeController
-                                                      .currentPage.value ==
-                                                  2
-                                              ? t.isDarkMode
-                                                  ? Themes
-                                                      .dark.secondaryHeaderColor
-                                                  : Themes.light.highlightColor
-                                              : const Color.fromARGB(
-                                                  255, 140, 140, 140),
-                                          fontSize: 16,
-                                          letterSpacing: 1,
-                                          fontFamily: "QuicksandBold"),
+                                        color: RuntimeController
+                                                    .currentPage.value ==
+                                                2
+                                            ? t.isDarkMode
+                                                ? Themes
+                                                    .dark.secondaryHeaderColor
+                                                : Themes.light.highlightColor
+                                            : const Color.fromARGB(
+                                                255, 140, 140, 140),
+                                        fontSize: 16,
+                                        letterSpacing: 1,
+                                      ),
                                     ),
                                     const SizedBox(
                                       width: 10,
@@ -180,18 +180,18 @@ class NavigationBottom extends StatelessWidget {
                                     Text(
                                       "About",
                                       style: TextStyle(
-                                          color: RuntimeController
-                                                      .currentPage.value ==
-                                                  3
-                                              ? t.isDarkMode
-                                                  ? Themes
-                                                      .dark.secondaryHeaderColor
-                                                  : Themes.light.highlightColor
-                                              : const Color.fromARGB(
-                                                  255, 140, 140, 140),
-                                          fontSize: 16,
-                                          letterSpacing: 1,
-                                          fontFamily: "QuicksandBold"),
+                                        color: RuntimeController
+                                                    .currentPage.value ==
+                                                3
+                                            ? t.isDarkMode
+                                                ? Themes
+                                                    .dark.secondaryHeaderColor
+                                                : Themes.light.highlightColor
+                                            : const Color.fromARGB(
+                                                255, 140, 140, 140),
+                                        fontSize: 16,
+                                        letterSpacing: 1,
+                                      ),
                                     ),
                                     const SizedBox(
                                       width: 10,
