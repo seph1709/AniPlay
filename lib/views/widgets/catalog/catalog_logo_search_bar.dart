@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:aniplay/themes/themes.dart';
 import 'package:aniplay/views/widgets/search/search.dart';
 import 'package:aniplay/controllers/theme_controller.dart';
-import 'package:aniplay/controllers/search_controller.dart';
 import 'package:aniplay/controllers/catalog_controller.dart';
 
 class LogoAndSearchBar extends StatefulWidget {
@@ -59,48 +58,45 @@ class _LogoAndSearchBarState extends State<LogoAndSearchBar> {
                                 : Themes.light.unselectedWidgetColor,
                             borderRadius: BorderRadius.circular(10),
                           ),
-                          child:
-                              GetBuilder<SearchResultController>(builder: (s) {
-                            return TextField(
-                              keyboardType: TextInputType.text,
-                              textInputAction: TextInputAction.search,
-                              controller: textEditingController,
-                              onTap: () {
-                                FocusManager.instance.primaryFocus
-                                    ?.requestFocus();
-                              },
-                              onTapOutside: (event) {
+                          child: TextField(
+                            keyboardType: TextInputType.text,
+                            textInputAction: TextInputAction.search,
+                            controller: textEditingController,
+                            onTap: () {
+                              FocusManager.instance.primaryFocus
+                                  ?.requestFocus();
+                            },
+                            onTapOutside: (event) {
+                              FocusManager.instance.primaryFocus?.unfocus();
+                            },
+                            onSubmitted: (value) {
+                              if (value.isNotEmpty) {
+                                c.getSerachItemResult(value);
                                 FocusManager.instance.primaryFocus?.unfocus();
-                              },
-                              onSubmitted: (value) {
-                                if (value.isNotEmpty) {
-                                  c.getSerachItemResult(value);
-                                  FocusManager.instance.primaryFocus?.unfocus();
-                                  Get.to(
-                                      SearchView(
-                                        searchVAlue: value,
-                                        textEditingController:
-                                            textEditingController,
-                                      ),
-                                      transition: Transition.downToUp);
-                                }
-                              },
-                              style: TextStyle(
-                                  color: !t.isDarkMode
-                                      ? Themes.dark.primaryColor
-                                      : Themes.light.primaryColor,
-                                  fontSize: 15,
-                                  letterSpacing: 1),
-                              decoration: InputDecoration.collapsed(
-                                hintText: "Search anything...",
-                                hintStyle: TextStyle(
-                                  color: t.isDarkMode
-                                      ? Themes.dark.hintColor
-                                      : Themes.light.hintColor,
-                                ),
+                                Get.to(
+                                    SearchView(
+                                      searchVAlue: value,
+                                      textEditingController:
+                                          textEditingController,
+                                    ),
+                                    transition: Transition.downToUp);
+                              }
+                            },
+                            style: TextStyle(
+                                color: !t.isDarkMode
+                                    ? Themes.dark.primaryColor
+                                    : Themes.light.primaryColor,
+                                fontSize: 15,
+                                letterSpacing: 1),
+                            decoration: InputDecoration.collapsed(
+                              hintText: "Search anything...",
+                              hintStyle: TextStyle(
+                                color: t.isDarkMode
+                                    ? Themes.dark.hintColor
+                                    : Themes.light.hintColor,
                               ),
-                            );
-                          }),
+                            ),
+                          ),
                         ),
                         const Align(
                           alignment: Alignment.centerRight,

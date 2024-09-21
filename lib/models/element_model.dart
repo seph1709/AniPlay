@@ -6,7 +6,6 @@ import 'package:html/dom.dart' as dom;
 import 'package:http/http.dart' as http;
 import 'package:aniplay/models/source_model.dart';
 import 'package:aniplay/models/catalog_model.dart';
-import 'package:aniplay/controllers/search_controller.dart';
 import 'package:aniplay/controllers/catalog_controller.dart';
 import 'package:aniplay/controllers/runtime_data_controller.dart';
 
@@ -189,8 +188,7 @@ class ElementHandler {
   }
 
   getResultItem() {
-    final SearchResultController c = Get.find();
     final items = getAllItemsElementForCatalog(false);
-    c.resultItemPerSource.add(items);
+    RuntimeController.resultItemPerSource.add(items);
   }
 }

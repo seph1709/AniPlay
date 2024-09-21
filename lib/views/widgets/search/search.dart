@@ -1,7 +1,7 @@
+import 'package:aniplay/controllers/runtime_data_controller.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:aniplay/themes/themes.dart';
-import 'package:aniplay/controllers/search_controller.dart';
 
 import 'package:aniplay/controllers/catalog_controller.dart';
 import 'package:aniplay/views/widgets/search/search._result.dart';
@@ -48,9 +48,8 @@ class _SearchViewState extends State<SearchView> {
                   children: [
                     GestureDetector(
                       onTapUp: (details) {
-                        final SearchResultController s = Get.find();
                         widget.textEditingController.clear();
-                        s.resultItemPerSource.clear();
+                        RuntimeController.resultItemPerSource.clear();
                         Get.back();
                       },
                       child: const SizedBox(
@@ -79,36 +78,32 @@ class _SearchViewState extends State<SearchView> {
                                   : Themes.light.unselectedWidgetColor,
                               borderRadius: BorderRadius.circular(10),
                             ),
-                            child: GetBuilder<SearchResultController>(
-                                builder: (s) {
-                              return TextField(
-                                keyboardType: TextInputType.text,
-                                textInputAction: TextInputAction.search,
-                                controller: widget.textEditingController,
-                                onEditingComplete: () {},
-                                onSubmitted: (value) {
-                                  if (value.isNotEmpty) {
-                                    c.getSerachItemResult(value);
-                                    FocusManager.instance.primaryFocus
-                                        ?.unfocus();
-                                  }
-                                },
-                                style: TextStyle(
-                                    color: !Get.isDarkMode
-                                        ? Themes.dark.primaryColor
-                                        : Themes.light.primaryColor,
-                                    fontSize: 15,
-                                    letterSpacing: 1),
-                                decoration: InputDecoration.collapsed(
-                                  hintText: "Search anything...",
-                                  hintStyle: TextStyle(
-                                    color: Get.isDarkMode
-                                        ? Themes.dark.hintColor
-                                        : Themes.dark.hintColor,
-                                  ),
+                            child: TextField(
+                              keyboardType: TextInputType.text,
+                              textInputAction: TextInputAction.search,
+                              controller: widget.textEditingController,
+                              onEditingComplete: () {},
+                              onSubmitted: (value) {
+                                if (value.isNotEmpty) {
+                                  c.getSerachItemResult(value);
+                                  FocusManager.instance.primaryFocus?.unfocus();
+                                }
+                              },
+                              style: TextStyle(
+                                  color: !Get.isDarkMode
+                                      ? Themes.dark.primaryColor
+                                      : Themes.light.primaryColor,
+                                  fontSize: 15,
+                                  letterSpacing: 1),
+                              decoration: InputDecoration.collapsed(
+                                hintText: "Search anything...",
+                                hintStyle: TextStyle(
+                                  color: Get.isDarkMode
+                                      ? Themes.dark.hintColor
+                                      : Themes.dark.hintColor,
                                 ),
-                              );
-                            }),
+                              ),
+                            ),
                           ),
                           Align(
                             alignment: Alignment.centerRight,

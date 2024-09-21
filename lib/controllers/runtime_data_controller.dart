@@ -29,6 +29,7 @@ class RuntimeController extends GetxController {
   static String title = "";
   static int epi = 1;
   static bool preventPlayer = false;
+  static var resultItemPerSource = [].obs;
 
   static void reset() {
     progress.value = 0;

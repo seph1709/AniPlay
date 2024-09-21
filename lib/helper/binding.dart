@@ -1,7 +1,6 @@
 import 'package:get/get.dart';
 import 'package:aniplay/controllers/web_controller.dart';
 import 'package:aniplay/controllers/theme_controller.dart';
-import 'package:aniplay/controllers/search_controller.dart';
 import 'package:aniplay/controllers/catalog_controller.dart';
 import 'package:aniplay/controllers/runtime_data_controller.dart';
 
@@ -10,7 +9,6 @@ class Binding extends Bindings {
   void dependencies() {
     Get.put(CatalogController());
     Get.put(RuntimeController());
-    Get.put(SearchResultController());
     Get.put(ThemeController());
     Get.put(WebController());
   }

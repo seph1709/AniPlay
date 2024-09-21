@@ -1,7 +1,6 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:aniplay/themes/themes.dart';
-import 'package:aniplay/controllers/search_controller.dart';
 import 'package:aniplay/controllers/catalog_controller.dart';
 import 'package:aniplay/controllers/runtime_data_controller.dart';
 import 'package:aniplay/views/widgets/search/search_result_item.dart';
@@ -19,22 +18,21 @@ class SearchResult extends StatelessWidget {
               ? Themes.dark.scaffoldBackgroundColor
               : Themes.light.scaffoldBackgroundColor,
           body: SingleChildScrollView(
-            child: GetBuilder<SearchResultController>(builder: (s) {
-              return Obx(
-                () => Center(
-                  child: Column(
-                    children: [
-                      const ResultContainer(),
-                      if (s.resultItemPerSource.length != c.sources.length)
-                        Center(
-                            child: CircularProgressIndicator(
-                          color: RuntimeController.secondaryColor,
-                        ))
-                    ],
-                  ),
+            child: Obx(
+              () => Center(
+                child: Column(
+                  children: [
+                    const ResultContainer(),
+                    if (RuntimeController.resultItemPerSource.length !=
+                        c.sources.length)
+                      Center(
+                          child: CircularProgressIndicator(
+                        color: RuntimeController.secondaryColor,
+                      ))
+                  ],
                 ),
-              );
-            }),
+              ),
+            ),
           ),
         ),
       );

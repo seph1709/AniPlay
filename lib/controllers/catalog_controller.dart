@@ -9,7 +9,6 @@ import 'package:aniplay/models/source_model.dart';
 import 'package:aniplay/models/element_model.dart';
 import 'package:aniplay/models/user_data_model.dart';
 import 'package:aniplay/controllers/web_controller.dart';
-import 'package:aniplay/controllers/search_controller.dart';
 import 'package:aniplay/controllers/runtime_data_controller.dart';
 
 class CatalogController extends GetxController {
@@ -154,8 +153,7 @@ class CatalogController extends GetxController {
   }
 
   Future<void> getSerachItemResult(String value) async {
-    final SearchResultController r = Get.find();
-    r.resultItemPerSource.clear();
+    RuntimeController.resultItemPerSource.clear();
     for (var currentSourceMap in UserData.sources) {
       final body = await Request.getSearchResponseBody(
           value, Source.fromJson(currentSourceMap));
