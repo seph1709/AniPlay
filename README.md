@@ -7,7 +7,7 @@
 </div>
 <div align="center">
 
-<p>AniPlay lets you watch your favorite anime on your Android phone.</p>
+<p>AniPlay lets you watch your favorite anime, drama and movie on your Android phon e currently have 6 sources.</p>
 
 [![forthebadge](https://forthebadge.com/images/badges/built-for-android.svg)](https://android.com)[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://github.com/seph1709)
 
