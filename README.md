@@ -34,7 +34,7 @@
 - Add to favorites
 - Support change to any source
 
-### Sources
+## Sources
 
 #### Anime
 - Aniru
