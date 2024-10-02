@@ -33,7 +33,22 @@
 - Support types Latest, Completed, Popular
 - Add to favorites
 - Support change to any source
-  
+
+### Sources
+
+#### Anime
+- Aniru
+- Animey
+- Animensub
+
+#### Asian Drama
+- MyAsian
+- AsianC
+
+#### Movies
+- Tagalog Movies
+
+ 
 ## Building for Android
 Clone the repository from GitHub:
 ```bash
