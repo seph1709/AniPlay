@@ -13,11 +13,12 @@
 
 **Download from latest release** ⬇️
 
-[<img src="https://github.com/machiav3lli/oandbackupx/blob/034b226cea5c1b30eb4f6a6f313e4dadcbb0ece4/badge_github.png" alt="Get it on GitHub" height="65">](https://github.com/seph1709/AniPlay/releases/tag/v1.1.3)
+[<img src="https://github.com/machiav3lli/oandbackupx/blob/034b226cea5c1b30eb4f6a6f313e4dadcbb0ece4/badge_github.png" alt="Get it on GitHub" height="65">](https://github.com/seph1709/AniPlay/releases/tag/v1.2.3)
 <p>If you like this app you can show your appreciation by giving this repo a star. ⭐ It would be much appreciated.</p>
 </div>
 
 ## Screenshots
+
 
 <div align="center">
 <img src="https://github.com/user-attachments/assets/5fb66c5a-7fa5-4992-b3dc-2163089728bc" width=180>
