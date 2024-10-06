@@ -515,6 +515,7 @@
       "overrideSelectorHomeData": {
         "getCurrentSeasonLinkItems": {
           "querySelectorAll": {
+
             "selector": ".ssl-item.ep-item ",
             "attribute": "href"
           }
@@ -571,9 +572,13 @@
               "attribute": "href"
             },
             "reverse": true,
+
             "goto":{
-              "host":"filemoon.sx",
+              "host":"file-1bl9ruic-moon.com",
+              "host1":"streamsilk.com",
+              "host2":"vidmoly.to",
               "script":"jwplayer().getPlaylistItem()['file']"
+
             }
             
           }
