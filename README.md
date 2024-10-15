@@ -6,7 +6,7 @@
 # AniPlay
 </div>
 <div align="center">
-<b>This Repository is no longer maintained.</b>
+<p><b>This Repository is no longer maintained.</b></p>
 
 <p>AniPlay lets you watch your favorite anime, drama, and movie on your Android phone. It currently has six sources.</p>
 
