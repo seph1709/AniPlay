@@ -50,27 +50,9 @@
 **Movies**
 - Tagalog Movies
 
+
+
  
-## Building for Android
-Clone the repository from GitHub:
-```bash
-git clone https://github.com/seph1709/AniPlay.git
-```
-Get all dependencies:
-```bash
-flutter pub get
-```
-Build for android:
-```bash
-flutter build apk
-```
-
-## Contribution
-
-You can contribute in the following ways:
-- make a suggestion
-- bug feedback
-- code contribution
 
 
 
