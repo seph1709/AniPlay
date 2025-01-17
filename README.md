@@ -39,16 +39,16 @@
 ## Sources
 
 **Anime**
-- Aniru
+- ~~Aniru~~
 - Animey
-- Animensub
+- ~~Animensub~~
 
 **Asian Drama**
 - MyAsian
 - AsianC
 
 **Movies**
-- Tagalog Movies
+- ~~Tagalog Movies~~
 
 
 
